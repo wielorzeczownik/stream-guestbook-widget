@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Build output
+widget/compiled/
+widget/dist/
+widget/export/
+
+# Vite cache
+.vite/
+
+# TypeScript incremental build info
+*.tsbuildinfo
+
+# Test coverage (vitest --coverage)
+coverage/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea/
+*.suo
+*.user

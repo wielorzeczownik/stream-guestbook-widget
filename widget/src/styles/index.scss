@@ -1,0 +1,212 @@
+@use 'index-variables' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  opacity: 0;
+  perspective: 900px;
+  perspective-origin: center 20%;
+  transition: opacity 0.5s ease;
+
+  &.is-visible {
+    pointer-events: auto;
+    opacity: 1;
+  }
+}
+
+.book {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 300px;
+  padding: 0;
+  margin: 0;
+  filter: $drop-shadow;
+  transform: rotateX(35deg);
+  transform-style: preserve-3d;
+
+  &__list-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    list-style-type: none;
+    transform: translateX(-100px);
+    perspective: 600px;
+
+    &:not(:first-child, :last-child) .book__page {
+      top: 1.25%;
+      left: 1.25%;
+      width: 97.5%;
+      height: 97.5%;
+    }
+  }
+
+  &__page {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #d1d1d1;
+    transform: rotateY(var(--page-rotate, 180deg));
+    transform-origin: center right;
+    transform-style: preserve-3d;
+
+    &:first-child,
+    &:last-child {
+      border-radius: 10px 0 0 10px;
+    }
+
+    &--cover {
+      .book__page-face {
+        background: var(--cover-color, #{$dark});
+      }
+
+      .book__page-face--front {
+        border-radius: 0 10px 10px 0;
+      }
+
+      .book__page-face--back {
+        border-radius: 10px 0 0 10px;
+      }
+
+      &.front .book__page-face--front {
+        background-image: var(--cover-texture-front, none);
+        background-position: center;
+        background-size: cover;
+      }
+
+      &.back .book__page-face--back {
+        background-image: var(--cover-texture-back, none);
+        background-position: center;
+        background-size: cover;
+      }
+    }
+  }
+
+  &__page-face {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    overflow: hidden;
+    color: black;
+    text-align: center;
+    background-color: var(--page-color, white);
+    background-image: var(--page-texture, none);
+    background-position: center;
+    background-size: cover;
+    backface-visibility: hidden;
+
+    &::after {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      content: "";
+      background: linear-gradient(
+        to left,
+        transparent 20%,
+        rgb(0 0 0 / 45%)
+      );
+      opacity: calc(sin(var(--page-rotate, 180deg)));
+    }
+
+    &--front {
+      border-left: 5px solid var(--cover-color, #{$dark});
+      transform: rotateY(180deg);
+
+      &::after {
+        background: linear-gradient(
+          to right,
+          transparent 20%,
+          rgb(0 0 0 / 45%)
+        );
+      }
+    }
+  }
+
+  &__stamps {
+    display: grid;
+    grid-template-rows: repeat(var(--rows, 3), 1fr);
+    grid-template-columns: repeat(var(--cols, 3), 1fr);
+    gap: 4px 8px;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  }
+
+  &__stamp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    container-type: size;
+
+    &::before {
+      width: min(100cqw, 100cqh);
+      height: min(100cqw, 100cqh);
+      content: "";
+      background-image: var(--stamp-texture, none);
+      background-position: center;
+      background-size: cover;
+      border: 3px solid var(--stamp-color, #{$dark});
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 2px var(--stamp-color, #{$dark});
+    }
+
+    &--empty::before {
+      background-image: none;
+      border-color: transparent;
+      box-shadow: none;
+    }
+
+    &--filled::before {
+      background-color: color-mix(
+        in srgb,
+        var(--stamp-color, #{$dark}) 15%,
+        transparent
+      );
+      opacity: 0.7;
+      transform: rotate(-4deg);
+    }
+
+    &--new::before {
+      opacity: 0;
+      transform: scale(0) rotate(-15deg);
+    }
+
+    &--new.is-stamping::before {
+      opacity: 0.7;
+      transform: scale(1) rotate(-4deg);
+      transition:
+        opacity 0.1s ease-out,
+        transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+  }
+}

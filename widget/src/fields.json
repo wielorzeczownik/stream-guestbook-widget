@@ -1,0 +1,274 @@
+{
+  "widgetName": {
+    "type": "hidden",
+    "value": "Guestbook"
+  },
+  "widgetAuthor": {
+    "type": "hidden",
+    "value": "wielorzeczownik"
+  },
+  "widgetVersion": {
+    "type": "hidden",
+    "value": "0.1.0"
+  },
+  "displayDuration": {
+    "label": "Display duration (seconds)",
+    "type": "number",
+    "value": 5,
+    "min": 1,
+    "max": 60,
+    "group": "General"
+  },
+  "flipSpeed": {
+    "label": "Flip speed",
+    "type": "dropdown",
+    "value": "normal",
+    "options": {
+      "slow": "Slow",
+      "normal": "Normal",
+      "fast": "Fast"
+    },
+    "group": "General"
+  },
+  "btnTestAnimation": {
+    "type": "button",
+    "label": "Test animation",
+    "group": "Signing"
+  },
+  "btnResetSession": {
+    "type": "button",
+    "label": "Reset stream session (allow re-signing)",
+    "group": "Signing"
+  },
+  "signCommandName": {
+    "label": "Sign command name",
+    "type": "text",
+    "value": "sign",
+    "group": "Signing"
+  },
+  "enableSignCommandTwitch": {
+    "label": "Enable sign command on Twitch (use instead of Channel Points)",
+    "type": "checkbox",
+    "value": false,
+    "group": "Signing"
+  },
+  "enableSignCommandOther": {
+    "label": "Enable sign command on other platforms (YouTube, Kick)",
+    "type": "checkbox",
+    "value": true,
+    "group": "Signing"
+  },
+  "enableSignReward": {
+    "label": "Enable Channel Points reward (Twitch only)",
+    "type": "checkbox",
+    "value": true,
+    "group": "Signing"
+  },
+  "enableSignAnimation": {
+    "label": "Enable sign animation",
+    "type": "checkbox",
+    "value": true,
+    "group": "Signing"
+  },
+  "signRewardName": {
+    "label": "Channel Points reward name (Twitch)",
+    "type": "text",
+    "value": "Sign Guestbook",
+    "group": "Signing"
+  },
+  "enableSignMessage": {
+    "label": "Enable sign message in chat",
+    "type": "checkbox",
+    "value": true,
+    "group": "Signing"
+  },
+  "signMessage": {
+    "label": "Sign message use {name} and {count}",
+    "type": "text",
+    "value": "@{name} signed the Guestbook for the {count} time!",
+    "group": "Signing"
+  },
+  "btnClearAll": {
+    "type": "button",
+    "label": "Clear all guestbook data",
+    "group": "Reset"
+  },
+  "enableResetCommand": {
+    "label": "Enable reset command",
+    "type": "checkbox",
+    "value": false,
+    "group": "Reset"
+  },
+  "enableSelfReset": {
+    "label": "Allow users to reset themselves",
+    "type": "checkbox",
+    "value": false,
+    "group": "Reset"
+  },
+  "resetCommandName": {
+    "label": "Reset command name",
+    "type": "text",
+    "value": "reset",
+    "group": "Reset"
+  },
+  "resetMessageSelf": {
+    "label": "Reset message (self) use {name}",
+    "type": "text",
+    "value": "@{name}, your Guestbook entry has been reset!",
+    "group": "Reset"
+  },
+  "resetMessageOther": {
+    "label": "Reset message (mod resets other) use {target}",
+    "type": "text",
+    "value": "@{target}'s Guestbook entry has been reset!",
+    "group": "Reset"
+  },
+  "resetMessageNotFound": {
+    "label": "Reset message (user not found) use {target}",
+    "type": "text",
+    "value": "@{target} hasn't signed the Guestbook yet!",
+    "group": "Reset"
+  },
+  "btnTestVisitsAnimation": {
+    "type": "button",
+    "label": "Test visits animation",
+    "group": "Visits"
+  },
+  "enableVisitsCommand": {
+    "label": "Enable visits command",
+    "type": "checkbox",
+    "value": true,
+    "group": "Visits"
+  },
+  "enableVisitsAnimation": {
+    "label": "Enable visits animation",
+    "type": "checkbox",
+    "value": true,
+    "group": "Visits"
+  },
+  "visitsCommandName": {
+    "label": "Visits command name",
+    "type": "text",
+    "value": "visits",
+    "group": "Visits"
+  },
+  "visitsMessageFound": {
+    "label": "Visits message (signed) use {name} and {count}",
+    "type": "text",
+    "value": "@{name}, you've signed the Guestbook {count} time(s)!",
+    "group": "Visits"
+  },
+  "visitsMessageNotFound": {
+    "label": "Visits message (never signed) use {name}",
+    "type": "text",
+    "value": "@{name}, you haven't signed the Guestbook yet!",
+    "group": "Visits"
+  },
+  "visitsMessageFoundOther": {
+    "label": "Visits message for mods checking others (signed) use {target} and {count}",
+    "type": "text",
+    "value": "@{target} has signed the Guestbook {count} time(s)!",
+    "group": "Visits"
+  },
+  "visitsMessageNotFoundOther": {
+    "label": "Visits message for mods checking others (never signed) use {target}",
+    "type": "text",
+    "value": "@{target} hasn't signed the Guestbook yet!",
+    "group": "Visits"
+  },
+  "btnPostTop": {
+    "type": "button",
+    "label": "Post top in chat",
+    "group": "Top"
+  },
+  "enableTopCommand": {
+    "label": "Enable top command",
+    "type": "checkbox",
+    "value": true,
+    "group": "Top"
+  },
+  "topCommandName": {
+    "label": "Top command name",
+    "type": "text",
+    "value": "top",
+    "group": "Top"
+  },
+  "topCount": {
+    "label": "Number of top visitors to show",
+    "type": "number",
+    "value": 5,
+    "min": 1,
+    "max": 20,
+    "group": "Top"
+  },
+  "topMessage": {
+    "label": "Top message use {list}",
+    "type": "text",
+    "value": "Top visitors: {list}",
+    "group": "Top"
+  },
+  "topMessageEmpty": {
+    "label": "Top message (nobody signed yet)",
+    "type": "text",
+    "value": "Nobody has signed the Guestbook yet!",
+    "group": "Top"
+  },
+  "streakResetDays": {
+    "label": "Streak reset after X days without signing",
+    "type": "number",
+    "value": 7,
+    "min": 1,
+    "max": 365,
+    "group": "Signing"
+  },
+  "stampsPerPage": {
+    "label": "Stamps per page",
+    "type": "number",
+    "value": 6,
+    "min": 1,
+    "max": 50,
+    "group": "Appearance"
+  },
+  "coverColor": {
+    "label": "Cover color",
+    "type": "colorpicker",
+    "value": "#1b1920",
+    "group": "Appearance"
+  },
+  "coverTextureFront": {
+    "label": "Front cover texture (overrides color)",
+    "type": "image-input",
+    "value": "",
+    "group": "Appearance"
+  },
+  "coverTextureBack": {
+    "label": "Back cover texture (overrides color)",
+    "type": "image-input",
+    "value": "",
+    "group": "Appearance"
+  },
+  "pageColor": {
+    "label": "Page color",
+    "type": "colorpicker",
+    "value": "#ffffff",
+    "group": "Appearance"
+  },
+  "pageTexture": {
+    "label": "Page texture (overrides page color)",
+    "type": "image-input",
+    "value": "",
+    "group": "Appearance"
+  },
+  "stampColor": {
+    "label": "Stamp color",
+    "type": "colorpicker",
+    "value": "#1b1920",
+    "group": "Appearance"
+  },
+  "stampTexture": {
+    "label": "Stamp texture (empty = circle)",
+    "type": "image-input",
+    "value": "",
+    "group": "Appearance"
+  }
+}

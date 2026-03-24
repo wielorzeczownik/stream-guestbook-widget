@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/index.scss" />
+    <script type="module" src="./scripts/index.ts"></script>
+  </head>
+  <body>
+    <div id="widget">
+      <div id="wrapper" class="wrapper">
+        <ul id="book" class="book">
+          <li class="book__list-item">
+            <div class="book__page book__page--cover front">
+              <div class="book__page-face book__page-face--front"></div>
+              <div class="book__page-face book__page-face--back"></div>
+            </div>
+          </li>
+          <li class="book__list-item">
+            <div class="book__page book__page--cover back">
+              <div class="book__page-face book__page-face--front"></div>
+              <div class="book__page-face book__page-face--back"></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <template id="page-template">
+        <li class="book__list-item">
+          <div class="book__page">
+            <div class="book__page-face book__page-face--front">
+              <div class="book__stamps"></div>
+            </div>
+            <div class="book__page-face book__page-face--back">
+              <div class="book__stamps"></div>
+            </div>
+          </div>
+        </li>
+      </template>
+    </div>
+
+    <div id="dev-panel" class="dev-panel">
+      <div class="dev-panel__header">Dev Panel</div>
+
+      <div class="dev-panel__section">
+        <div class="dev-panel__section-title">User</div>
+        <input
+          id="dev-username"
+          type="text"
+          value="TestUser"
+          placeholder="Username"
+          autocomplete="username"
+          spellcheck="false"
+        />
+      </div>
+
+      <div class="dev-panel__section">
+        <div class="dev-panel__section-title">Sign</div>
+        <button id="dev-sign-youtube">via YouTube command</button>
+        <button id="dev-sign-twitch">via Twitch command</button>
+        <button id="dev-sign-points">via Channel Points (Twitch)</button>
+      </div>
+
+      <div class="dev-panel__section">
+        <div class="dev-panel__section-title">Commands</div>
+        <button id="dev-visits-self">!visits (self, YouTube)</button>
+        <button id="dev-visits-other">!visits @user (mod)</button>
+        <button id="dev-reset-other">!reset @user (mod)</button>
+        <button id="dev-top">!top (mod)</button>
+      </div>
+
+      <div class="dev-panel__section">
+        <div class="dev-panel__section-title">Animations (UI only)</div>
+        <button id="dev-anim-sign">Sign animation</button>
+        <button id="dev-anim-visits">Visits animation</button>
+      </div>
+
+      <div class="dev-panel__section">
+        <div class="dev-panel__section-title">Session</div>
+        <button id="dev-reset-session">Reset session (allow re-sign)</button>
+        <button id="dev-clear-all" class="dev-panel__button--danger">
+          Clear ALL data
+        </button>
+      </div>
+
+      <div class="dev-panel__section">
+        <div class="dev-panel__section-title">Guests</div>
+        <div id="dev-panel-guests" class="dev-panel__guests"></div>
+      </div>
+    </div>
+  </body>
+</html>

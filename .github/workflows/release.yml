@@ -1,0 +1,225 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'widget/**'
+      - 'package.json'
+      - 'package-lock.json'
+
+concurrency:
+  group: release-main
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  prepare-release:
+    if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      released: ${{ steps.bump.outputs.released }}
+      version: ${{ steps.bump.outputs.version }}
+      tag: ${{ steps.bump.outputs.tag }}
+      commit_changes: ${{ steps.bump.outputs.commit_changes }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Install Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Determine next version (git-cliff)
+        id: cliff_bumped
+        uses: orhun/git-cliff-action@v4
+        with:
+          config: cliff.toml
+          args: --bumped-version
+        env:
+          OUTPUT: bumped-version.txt
+          GITHUB_REPO: ${{ github.repository }}
+
+      - name: Bump project version
+        id: bump
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          current_version=$(node -p "require('./package.json').version")
+          next_tag="${{ steps.cliff_bumped.outputs.content }}"
+          next_tag=$(echo "$next_tag" | tr -d '[:space:]')
+
+          if [[ -z "$next_tag" ]]; then
+            echo "Unable to determine next version from git-cliff"
+            exit 1
+          fi
+
+          if [[ "$next_tag" != v* ]]; then
+            next_tag="v$next_tag"
+          fi
+
+          next_version="${next_tag#v}"
+          current_tag="v$current_version"
+          has_current_tag="false"
+          if git rev-parse -q --verify "refs/tags/${current_tag}" >/dev/null; then
+            has_current_tag="true"
+          fi
+
+          if [[ "$next_version" == "$current_version" ]]; then
+            if [[ "$has_current_tag" == "false" ]]; then
+              echo "No bump from git-cliff, but no current tag exists. Creating initial release for ${current_tag}."
+              echo "released=true" >> "$GITHUB_OUTPUT"
+              echo "version=$current_version" >> "$GITHUB_OUTPUT"
+              echo "tag=$current_tag" >> "$GITHUB_OUTPUT"
+              echo "commit_changes=false" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+
+            echo "No user-facing commits since ${current_tag}. Nothing to release."
+            echo "released=false" >> "$GITHUB_OUTPUT"
+            echo "version=$current_version" >> "$GITHUB_OUTPUT"
+            echo "tag=$current_tag" >> "$GITHUB_OUTPUT"
+            echo "commit_changes=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          if [[ "$(printf '%s\n' "$current_version" "$next_version" | sort -V | tail -1)" != "$next_version" ]]; then
+            echo "git-cliff returned $next_version which is lower than current $current_version. Nothing to release."
+            echo "released=false" >> "$GITHUB_OUTPUT"
+            echo "version=$current_version" >> "$GITHUB_OUTPUT"
+            echo "tag=$current_tag" >> "$GITHUB_OUTPUT"
+            echo "commit_changes=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          npm version "$next_version" --no-git-tag-version
+
+          node -e "
+            const fs = require('fs');
+            const tixyel = JSON.parse(fs.readFileSync('widget/.tixyel', 'utf8'));
+            tixyel.version = '$next_version';
+            fs.writeFileSync('widget/.tixyel', JSON.stringify(tixyel, null, 2) + '\n');
+          "
+
+          node -e "
+            const fs = require('fs');
+            const fields = JSON.parse(fs.readFileSync('widget/src/fields.json', 'utf8'));
+            fields.widgetVersion.value = '$next_version';
+            fs.writeFileSync('widget/src/fields.json', JSON.stringify(fields, null, 2) + '\n');
+          "
+
+          echo "released=true" >> "$GITHUB_OUTPUT"
+          echo "version=$next_version" >> "$GITHUB_OUTPUT"
+          echo "tag=$next_tag" >> "$GITHUB_OUTPUT"
+          echo "commit_changes=true" >> "$GITHUB_OUTPUT"
+
+      - name: Generate release notes (git-cliff)
+        if: ${{ steps.bump.outputs.released == 'true' }}
+        uses: orhun/git-cliff-action@v4
+        with:
+          config: cliff.toml
+          args: --unreleased --tag ${{ steps.bump.outputs.tag }}
+        env:
+          OUTPUT: release-notes.md
+          GITHUB_REPO: ${{ github.repository }}
+
+      - name: Commit, tag, and push
+        if: ${{ steps.bump.outputs.released == 'true' && steps.bump.outputs.commit_changes == 'true' }}
+        uses: EndBug/add-and-commit@v10
+        with:
+          add: 'package.json package-lock.json widget/.tixyel widget/src/fields.json'
+          default_author: github_actions
+          message: 'chore(release): ${{ steps.bump.outputs.tag }} [skip ci]'
+          tag: '${{ steps.bump.outputs.tag }}'
+          push: true
+
+      - name: Push tag only
+        if: ${{ steps.bump.outputs.released == 'true' && steps.bump.outputs.commit_changes == 'false' }}
+        run: |
+          git tag "${{ steps.bump.outputs.tag }}"
+          git push origin "${{ steps.bump.outputs.tag }}"
+
+      - name: Upload release notes
+        if: ${{ steps.bump.outputs.released == 'true' }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: release-notes
+          path: release-notes.md
+
+  build-artifacts:
+    needs: prepare-release
+    if: ${{ needs.prepare-release.outputs.released == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout tag
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ needs.prepare-release.outputs.tag }}
+
+      - name: Install Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Prepare release artifacts
+        shell: bash
+        run: |
+          VERSION="${{ needs.prepare-release.outputs.version }}"
+          mkdir -p release
+          cp widget/export/${VERSION}/*.zip release/guestbook-widgetio.zip
+          zip -j release/guestbook.zip widget/dist/*
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: widget-export
+          path: release/*.zip
+
+  publish-release:
+    needs:
+      - prepare-release
+      - build-artifacts
+    if: ${{ needs.prepare-release.outputs.released == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download widget artifact
+        uses: actions/download-artifact@v8
+        with:
+          name: widget-export
+          path: dist
+
+      - name: Download release notes
+        uses: actions/download-artifact@v8
+        with:
+          name: release-notes
+          path: .
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ needs.prepare-release.outputs.tag }}
+          name: ${{ needs.prepare-release.outputs.tag }}
+          body_path: release-notes.md
+          files: dist/*

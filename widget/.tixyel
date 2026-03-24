@@ -1,0 +1,29 @@
+{
+  "type": "single",
+  "name": "guestbook",
+  "description": "A stream overlay widget where viewers sign the guestbook via chat command or Channel Points redemption. Works with Twitch, YouTube, and Kick via StreamElements.",
+  "version": "0.0.0",
+  "config": "../tixyel.config.ts",
+  "metadata": {
+    "author": "wielorzeczownik",
+    "tags": [
+      "guestbook",
+      "chat",
+      "twitch",
+      "youtube",
+      "kick",
+      "streamelements",
+      "stream-overlay",
+      "widget",
+      "obs",
+      "obs-widget",
+      "channel-points"
+    ]
+  },
+  "dirs": {
+    "entry": "compiled",
+    "output": "dist",
+    "shared": "shared",
+    "extension": "export"
+  }
+}

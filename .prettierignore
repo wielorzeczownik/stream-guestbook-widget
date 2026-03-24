@@ -1,0 +1,7 @@
+.idea/
+.vscode/
+.DS_Store
+node_modules/
+widget/compiled/
+widget/dist/
+widget/export/
