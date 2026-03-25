@@ -15,6 +15,10 @@
   A stream overlay widget where viewers sign the guestbook via chat command or Channel Points. Works with Twitch, YouTube, and Kick via StreamElements.
 </p>
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/wielorzeczownik/stream-guestbook-widget/main/assets/demo.gif" alt="Widget demo" width="600"/>
+</p>
+
 ---
 
 ## What it does
@@ -43,13 +47,13 @@ Two builds are available in [GitHub Releases](https://github.com/wielorzeczownik
 
 | File | For |
 |---|---|
-| `guestbook-widgetio.zip` | [widget-io](https://github.com/sigma-cw/widget-io) - import directly |
+| `guestbook-widgetio.zip` | [widget.io](https://github.com/sigma-cw/widget-io) - import directly |
 | `guestbook.zip` | StreamElements custom widget - manual import |
 
-### widget-io
+### widget.io
 
 1. Download `guestbook-widgetio.zip`.
-2. In widget-io, click **Import** and select the zip.
+2. In widget.io, click **Import** and select the zip.
 3. Configure and save.
 
 ### StreamElements
@@ -108,7 +112,7 @@ npm install
 npm run build
 ```
 
-The built widget files land in `widget/dist/`. The StreamElements-ready zip is in `widget/export/`.
+The built widget files land in `widget/compiled/`. The StreamElements-ready is in `widget/dist/`. For widgetIO, the export ZIP is in `widget/export/`.
 
 ---
 
