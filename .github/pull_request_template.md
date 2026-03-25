@@ -15,6 +15,7 @@
 - [ ] `npm run lint` passes
 - [ ] `npm run lint:scss` passes
 - [ ] `npm run test` passes
+- [ ] `npm run format:check` passes
 - [ ] `npm run build` passes
 
 ## Related issue
