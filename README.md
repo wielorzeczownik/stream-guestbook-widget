@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <img src="./assets/demo.webp" alt="Widget demo" width="600"/>
+  <img src="https://raw.githubusercontent.com/wielorzeczownik/stream-guestbook-widget/main/assets/demo.webp" alt="Widget demo" width="600"/>
 </p>
 
 ---
