@@ -10,7 +10,7 @@
     },
     {
       "matchDepTypes": ["devDependencies"],
-      "commitMessageSuffix": " [skip ci]"
+      "commitMessageSuffix": " [skip release]"
     }
   ]
 }
