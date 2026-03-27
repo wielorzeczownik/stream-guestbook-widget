@@ -20,7 +20,7 @@ export function initTop(config: Config): void {
 
     const list = sorted
       .map(
-        (guest, index) => `${index + 1}. ${guest.displayName} (${guest.count})`
+        (guest, index) => `${index + 1}. @${guest.displayName} (${guest.count})`
       )
       .join(' | ');
 

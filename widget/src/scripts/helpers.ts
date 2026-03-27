@@ -1,6 +1,14 @@
 import Tixyel from '@tixyel/streamelements';
 
+import client from '@/client';
+import { SE_BOT_API } from '@/constants';
 import type { CommandEvent, EventData } from '@/types';
+
+let _jwtToken = '';
+
+export function initChatMessage(jwtToken: string): void {
+  _jwtToken = jwtToken;
+}
 
 export function getEventData(event: CommandEvent): EventData {
   return (event.data as { event: { data: EventData } }).event.data;
@@ -33,12 +41,18 @@ export function getUser(event: CommandEvent): {
 }
 
 export async function sendChatMessage(message: string): Promise<void> {
-  if (import.meta.env.DEV) {
+  if (import.meta.env.DEV || _jwtToken === '') {
     Tixyel.logger.info(message);
     return;
   }
 
-  const api = await Tixyel.SeAPI;
-  Tixyel.logger.info(api);
-  api.sendMessage(message, {});
+  const channelId = client.details.user.id;
+  await fetch(`${SE_BOT_API}/${channelId}/say`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${_jwtToken}`,
+    },
+    body: JSON.stringify({ message }),
+  });
 }

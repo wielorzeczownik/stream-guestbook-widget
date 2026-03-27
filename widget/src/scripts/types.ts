@@ -1,6 +1,7 @@
 import type { Command } from '@tixyel/streamelements';
 
 export type Config = {
+  jwtToken: string;
   displayDuration: number;
   flipSpeed: number;
   signCommandName: string;

@@ -7,6 +7,7 @@ import { initSign } from '@/commands/sign';
 import { initTop } from '@/commands/top';
 import { initVisits } from '@/commands/visits';
 import { parseFields } from '@/fields';
+import { initChatMessage } from '@/helpers';
 
 if (import.meta.env.DEV) {
   void Tixyel.Local.start();
@@ -14,6 +15,7 @@ if (import.meta.env.DEV) {
 
 client.on('load', () => {
   const config = parseFields(client.fields);
+  initChatMessage(config.jwtToken);
   initBook(config);
   initSign(config);
   initReset(config);

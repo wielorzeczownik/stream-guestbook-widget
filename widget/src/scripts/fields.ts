@@ -32,6 +32,7 @@ export function parseFields(
   };
 
   return {
+    jwtToken: getString('jwtToken'),
     // Convert seconds to milliseconds
     displayDuration:
       Math.max(1, getNumber('displayDuration', DEFAULT_DISPLAY_DURATION_S)) *

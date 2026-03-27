@@ -11,6 +11,12 @@
     "type": "hidden",
     "value": "0.1.2"
   },
+  "jwtToken": {
+    "label": "StreamElements JWT token",
+    "type": "text",
+    "value": "",
+    "group": "General"
+  },
   "displayDuration": {
     "label": "Display duration (seconds)",
     "type": "number",

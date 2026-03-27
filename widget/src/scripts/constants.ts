@@ -39,3 +39,5 @@ export const DEFAULT_SIGN_REWARD = 'Sign Guestbook';
 export const DEFAULT_RESET_COMMAND = 'reset';
 export const DEFAULT_VISITS_COMMAND = 'visits';
 export const DEFAULT_TOP_COMMAND = 'top';
+
+export const SE_BOT_API = 'https://api.streamelements.com/kappa/v2/bot';
