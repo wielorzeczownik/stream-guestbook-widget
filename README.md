@@ -85,6 +85,14 @@ Enable **Enable sign command on Twitch** in the widget settings. Viewers use `!s
 
 Chat command is enabled by default for non-Twitch platforms. No extra setup needed.
 
+### StreamElements JWT token
+
+The widget needs a JWT token to post messages to chat.
+
+1. Go to [StreamElements Dashboard](https://streamelements.com/dashboard/account/channels).
+2. Click **Copy** next to your channel's JWT token.
+3. Paste it into the **StreamElements JWT token** field in the widget settings.
+
 ---
 
 ## Commands
