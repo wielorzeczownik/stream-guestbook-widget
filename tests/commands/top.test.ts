@@ -76,7 +76,7 @@ describe('Top command', () => {
     const run = makeTop();
     run([], fakeEvent);
     expect(mockSendMessage).toHaveBeenCalledWith(
-      'Top: 1. Bob (10) | 2. Alice (5) | 3. Charlie (3)'
+      'Top: 1. @Bob (10) | 2. @Alice (5) | 3. @Charlie (3)'
     );
   });
 
@@ -90,7 +90,7 @@ describe('Top command', () => {
     const run = makeTop(makeConfig({ topCount: 2 }));
     run([], fakeEvent);
     expect(mockSendMessage).toHaveBeenCalledWith(
-      'Top: 1. Bob (10) | 2. Alice (5)'
+      'Top: 1. @Bob (10) | 2. @Alice (5)'
     );
   });
 
