@@ -35,7 +35,7 @@
     "vitest": "4.1.2"
   },
   "dependencies": {
-    "@tixyel/streamelements": "7.2.1",
+    "@tixyel/streamelements": "7.3.0",
     "motion": "12.38.0"
   }
 }
