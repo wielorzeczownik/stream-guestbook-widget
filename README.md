@@ -1,7 +1,7 @@
 <h1 align="center">Stream Guestbook Widget</h1>
 
 <p align="center">
-  <a href="https://github.com/wielorzeczownik/stream-guestbook-widget/actions/workflows/release.yml"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/github/actions/workflow/status/wielorzeczownik/stream-guestbook-widget/release.yml?style=flat-square&labelColor=2d333b&color=3fb950"/><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/github/actions/workflow/status/wielorzeczownik/stream-guestbook-widget/release.yml?style=flat-square&color=2ea043"/><img src="https://img.shields.io/github/actions/workflow/status/wielorzeczownik/stream-guestbook-widget/release.yml?style=flat-square&labelColor=2d333b&color=3fb950" alt="Build"/></picture></a> <a href="https://github.com/wielorzeczownik/stream-guestbook-widget/releases/latest"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/github/v/release/wielorzeczownik/stream-guestbook-widget?style=flat-square&labelColor=2d333b&color=3fb950"/><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/github/v/release/wielorzeczownik/stream-guestbook-widget?style=flat-square&color=2ea043"/><img src="https://img.shields.io/github/v/release/wielorzeczownik/stream-guestbook-widget?style=flat-square&labelColor=2d333b&color=3fb950" alt="Latest Release"/></picture></a> <a href="https://github.com/wielorzeczownik/stream-guestbook-widget/blob/main/LICENSE"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/License-MIT-3fb950?style=flat-square&labelColor=2d333b"/><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/License-MIT-2ea043?style=flat-square"/><img src="https://img.shields.io/badge/License-MIT-3fb950?style=flat-square&labelColor=2d333b" alt="License: MIT"/></picture></a>
+  <a href="https://github.com/wielorzeczownik/stream-guestbook-widget/actions/workflows/release.yml"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/github/actions/workflow/status/wielorzeczownik/stream-guestbook-widget/release.yml?branch=main&style=flat-square&labelColor=2d333b&color=3fb950"/><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/github/actions/workflow/status/wielorzeczownik/stream-guestbook-widget/release.yml?branch=main&style=flat-square&color=2ea043"/><img src="https://img.shields.io/github/actions/workflow/status/wielorzeczownik/stream-guestbook-widget/release.yml?branch=main&style=flat-square&labelColor=2d333b&color=3fb950" alt="Build"/></picture></a> <a href="https://github.com/wielorzeczownik/stream-guestbook-widget/releases/latest"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/github/v/release/wielorzeczownik/stream-guestbook-widget?style=flat-square&labelColor=2d333b&color=3fb950"/><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/github/v/release/wielorzeczownik/stream-guestbook-widget?style=flat-square&color=2ea043"/><img src="https://img.shields.io/github/v/release/wielorzeczownik/stream-guestbook-widget?style=flat-square&labelColor=2d333b&color=3fb950" alt="Latest Release"/></picture></a> <a href="https://github.com/wielorzeczownik/stream-guestbook-widget/blob/main/LICENSE"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/License-MIT-3fb950?style=flat-square&labelColor=2d333b"/><source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/License-MIT-2ea043?style=flat-square"/><img src="https://img.shields.io/badge/License-MIT-3fb950?style=flat-square&labelColor=2d333b" alt="License: MIT"/></picture></a>
   <br/>
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript"/>
   <a href="https://github.com/sigma-cw/widget-io"><img src="https://img.shields.io/badge/widget.io-compatible-3fb950?style=flat-square&labelColor=2d333b" alt="widget.io compatible"/></a>
@@ -12,62 +12,53 @@
 </p>
 
 <p align="center">
-  A stream overlay widget where viewers sign the guestbook via chat command or Channel Points. Works with Twitch, YouTube, and Kick via StreamElements.
+  <img src="https://raw.githubusercontent.com/wielorzeczownik/stream-guestbook-widget/main/assets/demo.webp" alt="Stream Guestbook Widget demo — guestbook overlay animation in StreamElements" width="600"/>
 </p>
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/wielorzeczownik/stream-guestbook-widget/main/assets/demo.webp" alt="Widget demo" width="600"/>
-</p>
+<p align="center">🇬🇧 English | 🇵🇱 <a href="README.pl.md">Polski</a></p>
 
----
+A free StreamElements widget for Twitch, YouTube, and Kick - viewers sign a virtual guestbook via chat command or Channel Points. Tracks visit counts and leaderboards.
 
-## What it does
+## How it works
 
-Viewers type a chat command (or redeem a Channel Points reward on Twitch) to leave their mark in a book overlay that flips open on screen. Every signature is remembered across streams - viewers can track how many times they've signed and compete for top visitor spots.
-
----
+Viewers type a chat command or redeem a Channel Points reward on Twitch to sign the guestbook. A book overlay flips open on screen. Every signature is remembered across streams - viewers can check how many times they've signed and compete for the top visitor leaderboard.
 
 ## Features
 
 - **Sign via chat command** or **Channel Points** (Twitch only)
-- **Cross-platform** - Twitch, YouTube, Kick through StreamElements
-- **Streak tracking** - streak resets after a configurable number of days without signing
-- **Visit counter** - viewers can check how many times they've signed with `!visits`
-- **Top visitors** - post a leaderboard to chat with `!top`
-- **Fully customizable** chat messages with `{name}`, `{count}`, `{target}` placeholders
-- **Mod tools** - reset individual users or clear all data
-- **Appearance** - cover color, page color, stamp color, custom textures for all three
+- **Cross-platform** - Twitch, YouTube and Kick
+- **Visit counter** - viewers check their sign count with `!visits`
+- **Top visitors leaderboard** - post rankings to chat with `!top`
+- **Fully customizable** chat responses with `{name}`, `{count}`, `{target}` placeholders
+- **Mod tools** - reset individual users or wipe all data
+- **Appearance** - cover color, page color, stamp color, custom textures for each
 - **Flip animation** - three speed options, configurable display duration
-
----
 
 ## Installation
 
-Two builds are available in [GitHub Releases](https://github.com/wielorzeczownik/stream-guestbook-widget/releases/latest):
+Download the latest release from [GitHub Releases](https://github.com/wielorzeczownik/stream-guestbook-widget/releases/latest):
 
-| File | For |
-|---|---|
-| `guestbook-widgetio.zip` | [widget.io](https://github.com/sigma-cw/widget-io) - import directly |
-| `guestbook.zip` | StreamElements custom widget - manual import |
+| File                                                                                                                                 | For                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------- |
+| [guestbook-widgetio.zip](https://github.com/wielorzeczownik/stream-guestbook-widget/releases/latest/download/guestbook-widgetio.zip) | [widget.io](https://github.com/sigma-cw/widget-io) - import directly |
+| [guestbook.zip](https://github.com/wielorzeczownik/stream-guestbook-widget/releases/latest/download/guestbook.zip)                   | StreamElements custom widget - manual import                         |
 
-### widget.io
+### [widget.io](https://github.com/sigma-cw/widget-io)
 
-1. Download `guestbook-widgetio.zip`.
-2. In widget.io, click **Import** and select the zip.
+1. Download [guestbook-widgetio.zip](https://github.com/wielorzeczownik/stream-guestbook-widget/releases/latest/download/guestbook-widgetio.zip).
+2. In [widget.io](https://github.com/sigma-cw/widget-io) , click **Import** and select the zip.
 3. Configure and save.
 
-### StreamElements
+### StreamElements custom widget
 
-1. Download `guestbook.zip` and extract it.
+1. Download [guestbook.zip](https://github.com/wielorzeczownik/stream-guestbook-widget/releases/latest/download/guestbook.zip) and extract it.
 2. Go to **My Overlays** → **New Overlay** → **Add Widget** → **Custom Widget**.
 3. Click **Open Editor** and fill in each tab with the matching file from the zip:
    - **HTML** → `HTML.html`
    - **CSS** → `CSS.css`
    - **JS** → `SCRIPT.js`
    - **Fields** → `FIELDS.json`
-4. Click **Done**, configure the widget fields to your liking, and save.
-
----
+4. Click **Done**, configure the widget fields, and save.
 
 ## Setup
 
@@ -75,7 +66,7 @@ Two builds are available in [GitHub Releases](https://github.com/wielorzeczownik
 
 1. Create a Channel Points reward named exactly **Sign Guestbook** (or whatever you set in the widget fields).
 2. In the widget settings, enable **Enable Channel Points reward**.
-3. Disable **Enable sign command on Twitch** if you don't want the chat command on Twitch.
+3. Disable **Enable sign command on Twitch** if you don't want the chat command alongside it.
 
 ### Twitch - chat command
 
@@ -93,8 +84,6 @@ The widget needs a JWT token to post messages to chat.
 2. Click **Copy** next to your channel's JWT token.
 3. Paste it into the **StreamElements JWT token** field in the widget settings.
 
----
-
 ## Commands
 
 | Command         | Who can use | What it does                             |
@@ -107,8 +96,6 @@ The widget needs a JWT token to post messages to chat.
 
 All command names are configurable in the widget settings.
 
----
-
 ## Building from source
 
 Requirements: [Node.js](https://nodejs.org) 24+.
@@ -120,9 +107,7 @@ npm install
 npm run build
 ```
 
-The built widget files land in `widget/compiled/`. The StreamElements-ready is in `widget/dist/`. For widgetIO, the export ZIP is in `widget/export/`.
-
----
+The built widget files land in `widget/compiled/`. The StreamElements-ready zip is in `widget/dist/`. For [widget.io](https://github.com/sigma-cw/widget-io), the export zip is in `widget/export/`.
 
 ## Credits
 
