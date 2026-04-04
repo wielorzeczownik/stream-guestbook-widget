@@ -34,7 +34,6 @@ conventional_commits = true
 filter_unconventional = true
 split_commits = false
 commit_parsers = [
-  { message = ".*\\[skip release\\].*", skip = true },
   { breaking = true, group = "Breaking Changes" },
   { message = "^chore\\(release\\)", group = "Internal" },
   { message = "^chore\\(deps\\)", group = "Dependencies" },
