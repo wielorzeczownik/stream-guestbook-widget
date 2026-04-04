@@ -10,7 +10,11 @@
     },
     {
       "matchDepTypes": ["devDependencies"],
-      "commitMessageSuffix": " [skip release]"
+      "semanticCommitType": "build"
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "semanticCommitType": "ci"
     }
   ]
 }
