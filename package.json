@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@tixyel/cli": "3.5.4",
-    "@types/node": "25.5.2",
+    "@types/node": "25.6.0",
     "eslint": "10.2.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-simple-import-sort": "13.0.0",
