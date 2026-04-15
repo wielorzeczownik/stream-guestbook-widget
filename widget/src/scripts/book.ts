@@ -31,7 +31,7 @@ class Book {
     this.wrapper = document.getElementById('wrapper') as HTMLDivElement | null;
     this.el = document.getElementById('book') as HTMLUListElement | null;
     this.queue = new Tixyel.modules.useQueue<BookQueueItem>({
-      processor: async ({ count, visit, onDone }) => {
+      processor: async ({ value: { count, visit, onDone } }) => {
         await (visit ? this.showVisit(count) : this.showSign(count));
         onDone?.();
       },
