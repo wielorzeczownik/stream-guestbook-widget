@@ -15,6 +15,7 @@ export function makeEvent(
 
 export function makeConfig(overrides: Partial<Config> = {}): Config {
   return {
+    jwtToken: '',
     displayDuration: 5000,
     flipSpeed: 1,
     signCommandName: 'sign',
