@@ -1,5 +1,6 @@
 import path from 'node:path';
 
+import externalGlobals from 'rollup-plugin-external-globals';
 import { defineConfig } from 'vite';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
@@ -35,6 +36,11 @@ export default defineConfig({
         chunkFileNames: '[name].js',
         assetFileNames: '[name].[ext]',
       },
+      plugins: [
+        externalGlobals({
+          '@tixyel/streamelements': "globalThis['@tixyel/streamelements']",
+        }),
+      ],
     },
   },
 });
