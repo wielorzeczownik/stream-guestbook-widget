@@ -12,11 +12,12 @@
 
 ## Checklist
 
-- [ ] `npm run lint` passes
-- [ ] `npm run lint:scss` passes
-- [ ] `npm run test` passes
-- [ ] `npm run format:check` passes
-- [ ] `npm run build` passes
+<!-- Check only what applies to this PR -->
+
+- [ ] TypeScript lints and formats cleanly — if `.ts` or `.scss` changed
+- [ ] Shell scripts formatted — if `scripts/` (`.sh`) changed
+- [ ] Markdown lints cleanly — if any `.md` changed
+- [ ] Relevant documentation updated
 
 ## Related issue
 
