@@ -13,5 +13,9 @@
       "@tests/*": ["./tests/*"]
     }
   },
-  "include": ["./widget/src/scripts/**/*.ts", "./tests/**/*.ts", "./*.config.ts"]
+  "include": [
+    "./widget/src/scripts/**/*.ts",
+    "./tests/**/*.ts",
+    "./*.config.ts"
+  ]
 }
