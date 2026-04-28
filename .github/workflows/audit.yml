@@ -54,7 +54,7 @@ jobs:
 
       - name: Commit fix (production vulnerabilities)
         if: steps.audit_prod.outputs.vulnerable == 'true'
-        uses: EndBug/add-and-commit@v10
+        uses: EndBug/add-and-commit@v10.0.0
         with:
           add: "package-lock.json"
           default_author: github_actions
@@ -63,7 +63,7 @@ jobs:
 
       - name: Commit fix (dev-only vulnerabilities)
         if: steps.audit_prod.outputs.vulnerable == 'false' && steps.audit_dev.outputs.vulnerable == 'true'
-        uses: EndBug/add-and-commit@v10
+        uses: EndBug/add-and-commit@v10.0.0
         with:
           add: "package-lock.json"
           default_author: github_actions
