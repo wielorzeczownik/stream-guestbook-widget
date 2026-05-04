@@ -35,7 +35,7 @@ npm run dev
 ### With tools installed
 
 ```bash
-# Node
+# TypeScript
 npm run format:check
 npm run lint
 npm run lint:scss
