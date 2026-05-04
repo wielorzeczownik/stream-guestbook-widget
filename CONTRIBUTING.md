@@ -1,22 +1,25 @@
 # Contributing to stream-guestbook-widget
 
-Thank you for considering a contribution. This document describes how to get started.
+Thank you for considering a contribution. This document covers everything you need to get started.
 
-## Prerequisites
+## Overview
 
-- [Node.js](https://nodejs.org/) 24+
-- [shfmt](https://github.com/mvdan/sh)
-- [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2)
+A free StreamElements browser-source widget for Twitch, YouTube, and Kick – viewers sign a virtual guestbook via chat command or Channel Points. Tracks visit counts and leaderboards.
 
 ## Project structure
 
-- `widget/src/index.html` – widget entry point (HTML + bundled scripts and styles)
-- `widget/src/scripts/` – TypeScript source files
-- `widget/src/styles/` – SCSS source files
-- `widget/src/fields.json` – StreamElements widget field definitions
-- `widget/src/data.json` – StreamElements widget data definitions
-- `tests/` – unit tests (Vitest)
-- `scripts/bump-version.sh` – determines and applies the next release version from git-cliff output
+```text
+.
+├── widget/src/
+│   ├── index.html          widget entry point (HTML + bundled scripts and styles)
+│   ├── scripts/            TypeScript source files
+│   ├── styles/             SCSS source files
+│   ├── fields.json         StreamElements widget field definitions
+│   └── data.json           StreamElements widget data definitions
+├── tests/                  unit tests (Vitest)
+└── scripts/
+    └── bump-version.sh     determines and applies the next release version from git-cliff output
+```
 
 ## Development setup
 
@@ -27,13 +30,12 @@ npm install
 npm run dev
 ```
 
-## Before submitting a PR
+## Running checks locally
 
-Run all checks locally before opening a pull request.
-
-### With tools installed locally
+### With tools installed
 
 ```bash
+# Node
 npm run format:check
 npm run lint
 npm run lint:scss
@@ -41,7 +43,11 @@ npm run typecheck
 npm run test
 npm run build
 npm audit
+
+# Shell
 shfmt --diff scripts/
+
+# Markdown
 markdownlint-cli2 "**/*.md" '!node_modules/**'
 ```
 
@@ -57,25 +63,25 @@ docker run --rm -v "$(pwd):/workdir" davidanson/markdownlint-cli2 "**/*.md" '!no
 
 This project uses [Conventional Commits](https://www.conventionalcommits.org/). Commit messages drive automatic changelog generation and version bumping.
 
-Common prefixes:
-
-| Prefix       | When to use                         |
-| ------------ | ----------------------------------- |
-| `feat:`      | New feature or behavior             |
-| `fix:`       | Bug fix                             |
-| `chore:`     | Maintenance, dependency updates     |
-| `refactor:`  | Code change without behavior change |
-| `docs:`      | Documentation only                  |
-| `style:`     | Formatting, no logic change         |
-| `ci:`        | CI/CD changes                       |
+| Prefix      | When to use                         |
+| ----------- | ----------------------------------- |
+| `feat:`     | New feature or behavior             |
+| `fix:`      | Bug fix                             |
+| `test:`     | Adding or updating tests            |
+| `chore:`    | Maintenance, dependency updates     |
+| `refactor:` | Code change without behavior change |
+| `docs:`     | Documentation only                  |
+| `ci:`       | CI/CD changes                       |
 
 Breaking changes must include `BREAKING CHANGE:` in the commit footer.
+
+Keep commits focused on a single concern. If a change touches both logic and tests, a single commit is fine – if it touches unrelated areas, split it.
 
 ## Pull requests
 
 - Keep PRs focused on a single concern.
 - Reference any related issue in the PR description.
-- All CI checks must pass: linting, formatting, type checking, tests, build, shell formatting, and Markdown linting.
+- All CI checks must pass before merging.
 
 ## Reporting bugs
 
@@ -86,7 +92,7 @@ Open an [issue](https://github.com/wielorzeczownik/stream-guestbook-widget/issue
 - What actually happened
 - Your browser and OBS version
 
-> For security issues, please read [SECURITY.md](SECURITY.md) before opening a public issue.
+> For security issues, read [SECURITY.md](SECURITY.md) before opening a public issue.
 
 ## License
 

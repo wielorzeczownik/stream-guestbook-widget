@@ -12,27 +12,27 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/wielorzeczownik/stream-guestbook-widget/main/assets/demo.webp" alt="Stream Guestbook Widget — animacja nakładki księgi gości w StreamElements" width="600"/>
+  <img src="https://raw.githubusercontent.com/wielorzeczownik/stream-guestbook-widget/main/assets/demo.webp" alt="Stream Guestbook Widget – animacja nakładki księgi gości w StreamElements" width="600"/>
 </p>
 
 <p align="center">🇬🇧 <a href="README.md">English</a> | 🇵🇱 Polski</p>
 
-Darmowy widget do StreamElements dla Twitcha, YouTube i Kicka — widzowie podpisują wirtualną księgę gości komendą na czacie lub poprzez Channel Points. Zlicza wizyty i prowadzi tablicę wyników.
+Darmowy widget do StreamElements dla Twitcha, YouTube i Kicka – widzowie podpisują wirtualną księgę gości komendą na czacie lub poprzez Channel Points. Zlicza wizyty i prowadzi tablicę wyników.
 
 ## Jak to działa
 
-Widzowie wpisują komendę na czacie lub realizują nagrodę Channel Points na Twitchu, żeby podpisać księgę. Na ekranie pojawia się animacja otwierającej się książki. Każdy podpis jest zapamiętywany między streamami — widzowie mogą sprawdzić ile razy się podpisali i rywalizować o miejsce na tablicy wyników.
+Widzowie wpisują komendę na czacie lub realizują nagrodę Channel Points na Twitchu, żeby podpisać księgę. Na ekranie pojawia się animacja otwierającej się książki. Każdy podpis jest zapamiętywany między streamami – widzowie mogą sprawdzić ile razy się podpisali i rywalizować o miejsce na tablicy wyników.
 
 ## Funkcje
 
 - **Podpisywanie komendą czatu** lub **Channel Points** (tylko Twitch)
-- **Wieloplatformowość** — Twitch, YouTube i Kick
-- **Licznik wizyt** — widzowie sprawdzają swój wynik komendą `!visits`
-- **Tablica wyników** — wysyłanie rankingu na czat komendą `!top`
-- **W pełni konfigurowalny** — odpowiedzi na czacie z placeholderami `{name}`, `{count}`, `{target}`
-- **Narzędzia moderatorskie** — reset pojedynczego użytkownika lub wyczyszczenie wszystkich danych
-- **Wygląd** — kolor okładki, stron, pieczątki, własne tekstury dla każdego elementu
-- **Animacja przewracania** — trzy prędkości, konfigurowalna długość wyświetlania
+- **Wieloplatformowość** – Twitch, YouTube i Kick
+- **Licznik wizyt** – widzowie sprawdzają swój wynik komendą `!visits`
+- **Tablica wyników** – wysyłanie rankingu na czat komendą `!top`
+- **W pełni konfigurowalny** – odpowiedzi na czacie z placeholderami `{name}`, `{count}`, `{target}`
+- **Narzędzia moderatorskie** – reset pojedynczego użytkownika lub wyczyszczenie wszystkich danych
+- **Wygląd** – kolor okładki, stron, pieczątki, własne tekstury dla każdego elementu
+- **Animacja przewracania** – trzy prędkości, konfigurowalna długość wyświetlania
 
 ## Instalacja
 
@@ -40,8 +40,8 @@ Pobierz najnowsze wydanie z [GitHub Releases](https://github.com/wielorzeczownik
 
 | Plik                                                                                                                                 | Dla                                                                      |
 | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| [guestbook-widgetio.zip](https://github.com/wielorzeczownik/stream-guestbook-widget/releases/latest/download/guestbook-widgetio.zip) | [widget.io](https://github.com/sigma-cw/widget-io) — import bezpośrednio |
-| [guestbook.zip](https://github.com/wielorzeczownik/stream-guestbook-widget/releases/latest/download/guestbook.zip)                   | StreamElements custom widget — import ręczny                             |
+| [guestbook-widgetio.zip](https://github.com/wielorzeczownik/stream-guestbook-widget/releases/latest/download/guestbook-widgetio.zip) | [widget.io](https://github.com/sigma-cw/widget-io) – import bezpośrednio |
+| [guestbook.zip](https://github.com/wielorzeczownik/stream-guestbook-widget/releases/latest/download/guestbook.zip)                   | StreamElements custom widget – import ręczny                             |
 
 ### [widget.io](https://github.com/sigma-cw/widget-io)
 
@@ -111,4 +111,4 @@ Zbudowane pliki widgetu trafiają do `widget/compiled/`. Paczka gotowa dla Strea
 
 ## Uznania
 
-Animacja przewracania książki jest zaadaptowana z CodePen autorstwa [Nayary Alves](https://codepen.io/diemoritat) — [oryginalny pen](https://codepen.io/diemoritat/pen/LKROYZ).
+Animacja przewracania książki jest zaadaptowana z CodePen autorstwa [Nayary Alves](https://codepen.io/diemoritat) – [oryginalny pen](https://codepen.io/diemoritat/pen/LKROYZ).

@@ -12,27 +12,27 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/wielorzeczownik/stream-guestbook-widget/main/assets/demo.webp" alt="Stream Guestbook Widget demo — guestbook overlay animation in StreamElements" width="600"/>
+  <img src="https://raw.githubusercontent.com/wielorzeczownik/stream-guestbook-widget/main/assets/demo.webp" alt="Stream Guestbook Widget demo – guestbook overlay animation in StreamElements" width="600"/>
 </p>
 
 <p align="center">🇬🇧 English | 🇵🇱 <a href="README.pl.md">Polski</a></p>
 
-A free StreamElements widget for Twitch, YouTube, and Kick — viewers sign a virtual guestbook via chat command or Channel Points. Tracks visit counts and leaderboards.
+A free StreamElements widget for Twitch, YouTube, and Kick – viewers sign a virtual guestbook via chat command or Channel Points. Tracks visit counts and leaderboards.
 
 ## How it works
 
-Viewers type a chat command or redeem a Channel Points reward on Twitch to sign the guestbook. A book overlay flips open on screen. Every signature is remembered across streams — viewers can check how many times they've signed and compete for the top visitor leaderboard.
+Viewers type a chat command or redeem a Channel Points reward on Twitch to sign the guestbook. A book overlay flips open on screen. Every signature is remembered across streams – viewers can check how many times they've signed and compete for the top visitor leaderboard.
 
 ## Features
 
 - **Sign via chat command** or **Channel Points** (Twitch only)
-- **Cross-platform** — Twitch, YouTube and Kick
-- **Visit counter** — viewers check their sign count with `!visits`
-- **Top visitors leaderboard** — post rankings to chat with `!top`
+- **Cross-platform** – Twitch, YouTube and Kick
+- **Visit counter** – viewers check their sign count with `!visits`
+- **Top visitors leaderboard** – post rankings to chat with `!top`
 - **Fully customizable** chat responses with `{name}`, `{count}`, `{target}` placeholders
-- **Mod tools** — reset individual users or wipe all data
-- **Appearance** — cover color, page color, stamp color, custom textures for each
-- **Flip animation** — three speed options, configurable display duration
+- **Mod tools** – reset individual users or wipe all data
+- **Appearance** – cover color, page color, stamp color, custom textures for each
+- **Flip animation** – three speed options, configurable display duration
 
 ## Installation
 
@@ -40,8 +40,8 @@ Download the latest release from [GitHub Releases](https://github.com/wielorzecz
 
 | File                                                                                                                                 | For                                                                  |
 | ------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------- |
-| [guestbook-widgetio.zip](https://github.com/wielorzeczownik/stream-guestbook-widget/releases/latest/download/guestbook-widgetio.zip) | [widget.io](https://github.com/sigma-cw/widget-io) — import directly |
-| [guestbook.zip](https://github.com/wielorzeczownik/stream-guestbook-widget/releases/latest/download/guestbook.zip)                   | StreamElements custom widget — manual import                         |
+| [guestbook-widgetio.zip](https://github.com/wielorzeczownik/stream-guestbook-widget/releases/latest/download/guestbook-widgetio.zip) | [widget.io](https://github.com/sigma-cw/widget-io) – import directly |
+| [guestbook.zip](https://github.com/wielorzeczownik/stream-guestbook-widget/releases/latest/download/guestbook.zip)                   | StreamElements custom widget – manual import                         |
 
 ### [widget.io](https://github.com/sigma-cw/widget-io)
 
@@ -111,4 +111,4 @@ The built widget files land in `widget/compiled/`. The StreamElements-ready zip 
 
 ## Credits
 
-The book flip animation is adapted from a CodePen by [Nayara Alves](https://codepen.io/diemoritat) — [original pen](https://codepen.io/diemoritat/pen/LKROYZ).
+The book flip animation is adapted from a CodePen by [Nayara Alves](https://codepen.io/diemoritat) – [original pen](https://codepen.io/diemoritat/pen/LKROYZ).
