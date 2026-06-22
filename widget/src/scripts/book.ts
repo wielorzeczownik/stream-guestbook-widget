@@ -77,11 +77,11 @@ class Book {
   }
 
   private reset(): void {
-    const pageItemsToRemove = this.el?.querySelectorAll<HTMLLIElement>(
-      '.book__list-item:not(:first-child):not(:last-child)'
-    ) ?? [];
-    for (const pageItem of pageItemsToRemove)
-      pageItem.remove();
+    const pageItemsToRemove =
+      this.el?.querySelectorAll<HTMLLIElement>(
+        '.book__list-item:not(:first-child):not(:last-child)'
+      ) ?? [];
+    for (const pageItem of pageItemsToRemove) pageItem.remove();
 
     for (const selector of [
       '.book__list-item:first-child',
@@ -146,11 +146,11 @@ class Book {
   private buildPages(count: number, shouldMarkNew = true): void {
     const { stampsPerPage } = this.config;
 
-    const contentPageItems = this.el?.querySelectorAll<HTMLElement>(
-      '.book__list-item:not(:first-child):not(:last-child)'
-    ) ?? [];
-    for (const pageItem of contentPageItems)
-      pageItem.remove();
+    const contentPageItems =
+      this.el?.querySelectorAll<HTMLElement>(
+        '.book__list-item:not(:first-child):not(:last-child)'
+      ) ?? [];
+    for (const pageItem of contentPageItems) pageItem.remove();
 
     const backCover = this.el?.querySelector<HTMLElement>(
       '.book__list-item:last-child'
@@ -188,7 +188,11 @@ class Book {
           const stampIndex =
             leafIndex * STAMPS_PER_LEAF + faceOffset + stampSlot;
           const stamp = document.createElement('div');
-          stamp.className = this.getStampClass(stampIndex, count, shouldMarkNew);
+          stamp.className = this.getStampClass(
+            stampIndex,
+            count,
+            shouldMarkNew
+          );
           grid.append(stamp);
         }
       }

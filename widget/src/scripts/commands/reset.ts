@@ -27,7 +27,10 @@ export function initReset(config: Config): void {
       );
 
       if (!entry) {
-        const message = config.resetMessageNotFound.replace('{target}', () => target);
+        const message = config.resetMessageNotFound.replace(
+          '{target}',
+          () => target
+        );
         void sendChatMessage(message);
         return;
       }
@@ -40,7 +43,10 @@ export function initReset(config: Config): void {
       );
 
       if (config.resetMessageOther) {
-        const message = config.resetMessageOther.replace('{target}', () => target);
+        const message = config.resetMessageOther.replace(
+          '{target}',
+          () => target
+        );
         void sendChatMessage(message);
       }
       return;
@@ -55,7 +61,10 @@ export function initReset(config: Config): void {
     Tixyel.logger.success(`[Guestbook] Reset entry for ${displayName} (self)`);
 
     if (config.resetMessageSelf) {
-      const message = config.resetMessageSelf.replace('{name}', () => displayName);
+      const message = config.resetMessageSelf.replace(
+        '{name}',
+        () => displayName
+      );
       void sendChatMessage(message);
     }
   }
