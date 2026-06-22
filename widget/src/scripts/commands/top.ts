@@ -24,7 +24,7 @@ export function initTop(config: Config): void {
       )
       .join(' | ');
 
-    const message = config.topMessage.replace('{list}', list);
+    const message = config.topMessage.replace('{list}', () => list);
     void sendChatMessage(message);
   }
 

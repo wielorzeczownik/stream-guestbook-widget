@@ -57,8 +57,8 @@ export function initSign(config: Config): void {
 
     if (config.enableSignMessage) {
       const message = config.signMessage
-        .replace('{name}', displayName)
-        .replace('{count}', String(newCount));
+        .replace('{name}', () => displayName)
+        .replace('{count}', () => String(newCount));
       void sendChatMessage(message);
     }
 

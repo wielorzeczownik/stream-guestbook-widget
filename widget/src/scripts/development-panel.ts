@@ -19,7 +19,7 @@ function emulateCommand(
   platform: 'twitch' | 'youtube',
   name: string,
   message: string,
-  asModule = false
+  isBroadcaster = false
 ): void {
   if (platform === 'twitch') {
     Tixyel.Local.emulate.twitch.message({
@@ -27,7 +27,7 @@ function emulateCommand(
       userId: name.toLowerCase(),
       message,
       // "broadcaster" badge satisfies the isModOrBroadcaster check in helpers.ts
-      badges: asModule ? 'broadcaster' : [],
+      badges: isBroadcaster ? 'broadcaster' : [],
     });
   } else {
     Tixyel.Local.emulate.youtube.message({

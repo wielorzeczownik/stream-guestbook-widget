@@ -77,9 +77,10 @@ class Book {
   }
 
   private reset(): void {
-    for (const pageItem of this.el?.querySelectorAll<HTMLLIElement>(
+    const pageItemsToRemove = this.el?.querySelectorAll<HTMLLIElement>(
       '.book__list-item:not(:first-child):not(:last-child)'
-    ) ?? [])
+    ) ?? [];
+    for (const pageItem of pageItemsToRemove)
       pageItem.remove();
 
     for (const selector of [
@@ -133,21 +134,22 @@ class Book {
   private getStampClass(
     stampIndex: number,
     count: number,
-    markNew: boolean
+    shouldMarkNew: boolean
   ): string {
     if (stampIndex >= count) return 'book__stamp book__stamp--empty';
-    return markNew && stampIndex === count - 1
+    return shouldMarkNew && stampIndex === count - 1
       ? 'book__stamp book__stamp--new'
       : 'book__stamp book__stamp--filled';
   }
 
-  // markNew highlights the last stamp slot for the stamp-drop animation
-  private buildPages(count: number, markNew = true): void {
+  // shouldMarkNew highlights the last stamp slot for the stamp-drop animation
+  private buildPages(count: number, shouldMarkNew = true): void {
     const { stampsPerPage } = this.config;
 
-    for (const pageItem of this.el?.querySelectorAll<HTMLElement>(
+    const contentPageItems = this.el?.querySelectorAll<HTMLElement>(
       '.book__list-item:not(:first-child):not(:last-child)'
-    ) ?? [])
+    ) ?? [];
+    for (const pageItem of contentPageItems)
       pageItem.remove();
 
     const backCover = this.el?.querySelector<HTMLElement>(
@@ -166,13 +168,13 @@ class Book {
       const faces: [HTMLElement, number][] = [
         [
           pageElement.querySelector<HTMLElement>(
-            '.book__page-face--front .book__stamps'
+            ':scope .book__page-face--front .book__stamps'
           )!,
           0,
         ],
         [
           pageElement.querySelector<HTMLElement>(
-            '.book__page-face--back .book__stamps'
+            ':scope .book__page-face--back .book__stamps'
           )!,
           stampsPerPage,
         ],
@@ -186,7 +188,7 @@ class Book {
           const stampIndex =
             leafIndex * STAMPS_PER_LEAF + faceOffset + stampSlot;
           const stamp = document.createElement('div');
-          stamp.className = this.getStampClass(stampIndex, count, markNew);
+          stamp.className = this.getStampClass(stampIndex, count, shouldMarkNew);
           grid.append(stamp);
         }
       }
@@ -234,8 +236,8 @@ class Book {
 
       const STAMPS_PER_LEAF = 2 * stampsPerPage;
       // if the new stamp is on the back face, flip all pages; otherwise the last leaf stays half-open
-      const newStampOnBack = (count - 1) % STAMPS_PER_LEAF >= stampsPerPage;
-      const pagesToFlip = newStampOnBack
+      const isNewStampOnBack = (count - 1) % STAMPS_PER_LEAF >= stampsPerPage;
+      const pagesToFlip = isNewStampOnBack
         ? contentPages
         : contentPages.slice(0, -1);
       // Pages that weren't flipped open still need to be flipped during close

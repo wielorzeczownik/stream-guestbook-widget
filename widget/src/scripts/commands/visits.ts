@@ -21,8 +21,8 @@ export function initVisits(config: Config): void {
           ? config.visitsMessageNotFoundOther
           : config.visitsMessageFoundOther;
       const message = template
-        .replace('{target}', target)
-        .replace('{count}', String(count));
+        .replace('{target}', () => target)
+        .replace('{count}', () => String(count));
       if (count > 0 && config.enableVisitsAnimation) {
         queueVisit(count, () => {
           void sendChatMessage(message);
@@ -39,8 +39,8 @@ export function initVisits(config: Config): void {
     const template =
       count === 0 ? config.visitsMessageNotFound : config.visitsMessageFound;
     const message = template
-      .replace('{name}', name)
-      .replace('{count}', String(count));
+      .replace('{name}', () => name)
+      .replace('{count}', () => String(count));
     if (count > 0 && config.enableVisitsAnimation) {
       queueVisit(count, () => {
         void sendChatMessage(message);

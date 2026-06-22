@@ -22,9 +22,9 @@ export function parseFields(
 ): Config {
   const getString = (key: string, fallback = '') =>
     String(raw[key] ?? fallback);
-  const getBoolean = (key: string, fallback: boolean) =>
+  const isEnabled = (key: string, isEnabledByDefault: boolean) =>
     raw[key] === undefined
-      ? fallback
+      ? isEnabledByDefault
       : raw[key] !== false && raw[key] !== 'false';
   const getNumber = (key: string, fallback: number) => {
     const parsedNumber = Number(raw[key]);
@@ -39,18 +39,18 @@ export function parseFields(
       1000,
     flipSpeed: FLIP_SPEED_MAP[getString('flipSpeed', 'normal')] ?? 1,
     signCommandName: getString('signCommandName', DEFAULT_SIGN_COMMAND),
-    enableSignCommandTwitch: getBoolean('enableSignCommandTwitch', false),
-    enableSignCommandOther: getBoolean('enableSignCommandOther', true),
-    enableSignReward: getBoolean('enableSignReward', true),
+    enableSignCommandTwitch: isEnabled('enableSignCommandTwitch', false),
+    enableSignCommandOther: isEnabled('enableSignCommandOther', true),
+    enableSignReward: isEnabled('enableSignReward', true),
     signRewardName: getString('signRewardName', DEFAULT_SIGN_REWARD),
-    enableSignMessage: getBoolean('enableSignMessage', true),
+    enableSignMessage: isEnabled('enableSignMessage', true),
     signMessage: getString(
       'signMessage',
       '@{name} signed the Guestbook for the {count} time!'
     ),
-    enableSignAnimation: getBoolean('enableSignAnimation', true),
-    enableResetCommand: getBoolean('enableResetCommand', false),
-    enableSelfReset: getBoolean('enableSelfReset', false),
+    enableSignAnimation: isEnabled('enableSignAnimation', true),
+    enableResetCommand: isEnabled('enableResetCommand', false),
+    enableSelfReset: isEnabled('enableSelfReset', false),
     resetCommandName: getString('resetCommandName', DEFAULT_RESET_COMMAND),
     resetMessageSelf: getString(
       'resetMessageSelf',
@@ -64,8 +64,8 @@ export function parseFields(
       'resetMessageNotFound',
       "@{target} hasn't signed the Guestbook yet!"
     ),
-    enableVisitsCommand: getBoolean('enableVisitsCommand', true),
-    enableVisitsAnimation: getBoolean('enableVisitsAnimation', true),
+    enableVisitsCommand: isEnabled('enableVisitsCommand', true),
+    enableVisitsAnimation: isEnabled('enableVisitsAnimation', true),
     visitsCommandName: getString('visitsCommandName', DEFAULT_VISITS_COMMAND),
     visitsMessageFound: getString(
       'visitsMessageFound',
@@ -83,7 +83,7 @@ export function parseFields(
       'visitsMessageNotFoundOther',
       "@{target} hasn't signed the Guestbook yet!"
     ),
-    enableTopCommand: getBoolean('enableTopCommand', true),
+    enableTopCommand: isEnabled('enableTopCommand', true),
     topCommandName: getString('topCommandName', DEFAULT_TOP_COMMAND),
     topCount: Math.max(1, getNumber('topCount', DEFAULT_TOP_COUNT)),
     topMessage: getString('topMessage', 'Top visitors: {list}'),

@@ -3,10 +3,10 @@ import type { CommandEvent, Config } from '@/types';
 export function makeEvent(
   userId: string,
   displayName: string,
-  asModule = false,
+  isBroadcaster = false,
   provider = 'twitch'
 ): CommandEvent {
-  const badges = asModule ? [{ type: 'broadcaster', version: '1' }] : [];
+  const badges = isBroadcaster ? [{ type: 'broadcaster', version: '1' }] : [];
   return {
     provider,
     data: { event: { data: { userId, nick: userId, displayName, badges } } },
