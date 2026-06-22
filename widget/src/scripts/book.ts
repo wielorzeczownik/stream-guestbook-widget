@@ -431,16 +431,16 @@ class Book {
   }
 }
 
-let instance: Book;
+const state: { instance?: Book } = {};
 
 export function init(config: Config): void {
-  instance = new Book(config);
+  state.instance = new Book(config);
 }
 
 export function queueSign(count: number, onDone?: () => void): void {
-  instance.enqueueSign(count, onDone);
+  state.instance!.enqueueSign(count, onDone);
 }
 
 export function queueVisit(count: number, onDone?: () => void): void {
-  instance.enqueueVisit(count, onDone);
+  state.instance!.enqueueVisit(count, onDone);
 }

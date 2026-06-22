@@ -4,10 +4,10 @@ import client from '@/client';
 import { SE_BOT_API } from '@/constants';
 import type { CommandEvent, EventData } from '@/types';
 
-let _jwtToken = '';
+const state = { jwtToken: '' };
 
 export function initChatMessage(jwtToken: string): void {
-  _jwtToken = jwtToken;
+  state.jwtToken = jwtToken;
 }
 
 export function getEventData(event: CommandEvent): EventData {
@@ -41,7 +41,7 @@ export function getUser(event: CommandEvent): {
 }
 
 export async function sendChatMessage(message: string): Promise<void> {
-  if (import.meta.env.DEV || _jwtToken === '') {
+  if (import.meta.env.DEV || state.jwtToken === '') {
     Tixyel.logger.info(message);
     return;
   }
@@ -51,7 +51,7 @@ export async function sendChatMessage(message: string): Promise<void> {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${_jwtToken}`,
+      Authorization: `Bearer ${state.jwtToken}`,
     },
     body: JSON.stringify({ message }),
   });

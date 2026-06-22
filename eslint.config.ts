@@ -50,14 +50,7 @@ export default [
       'unicorn/prefer-at': 'off',
       'unicorn/prefer-query-selector': 'off',
       'unicorn/no-array-sort': 'off',
-      'unicorn/prevent-abbreviations': [
-        'error',
-        {
-          replacements: {
-            mod: { moderator: true },
-          },
-        },
-      ],
+      'unicorn/prevent-abbreviations': 'error',
     },
   },
 ];
