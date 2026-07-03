@@ -38,6 +38,6 @@
   },
   "dependencies": {
     "@tixyel/streamelements": "7.14.1",
-    "motion": "12.42.0"
+    "motion": "12.42.1"
   }
 }
