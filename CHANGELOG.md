@@ -5,10 +5,11 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.3.13](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.12...v0.3.13) - 2026-07-05
 
 ### Refactoring
 
+- Colocate single-use constants and types with their consumers ([8aaf14e](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/8aaf14eee67d55e61cab23f829f7c8b44970bfc7))
 - Satisfy new ESLint/HTML rules ([5554849](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/555484983f0f7241de9ba06463707dce2ac12cbb))
 - Use replaceChildren() to clear guest list ([ccefd66](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/ccefd66ee02276983b9bf062201f84c9814638a0))
 
@@ -18,6 +19,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Expand ESLint config and add HTML linting ([690bc8c](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/690bc8cc507379a3cbe6ead048ec044e66fefe33))
 - Update dependency vite to v8.1.3 (#121) ([97ad85b](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/97ad85b70e2728cb5de5e70e9ae2ad9dbc6ed814))
 - Update dependency @types/node to v26.1.0 (#119) ([780af42](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/780af42806d3e30c21086d93d4d77bf56702bb22))
+
+### CI/CD
+
+- Attest provenance and publish SHA-256 checksums ([f50062d](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/f50062dae27852e1b2f79efad34be9d45e56f1e1))
+- Split cliff config and generate cumulative CHANGELOG ([763e3a1](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/763e3a1e2b716d98817b8e4f7cc445efaeadd0f6))
 
 ## [0.3.12](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.11...v0.3.12) - 2026-07-04
 
