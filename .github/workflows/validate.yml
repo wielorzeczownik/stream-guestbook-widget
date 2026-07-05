@@ -168,3 +168,4 @@ jobs:
           globs: |
             **/*.md
             !node_modules/**
+            !CHANGELOG.md
