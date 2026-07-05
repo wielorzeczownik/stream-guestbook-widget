@@ -23,7 +23,7 @@
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-simple-import-sort": "13.0.0",
     "eslint-plugin-sonarjs": "4.1.0",
-    "eslint-plugin-unicorn": "68.0.0",
+    "eslint-plugin-unicorn": "70.0.0",
     "jiti": "2.7.0",
     "prettier": "3.9.4",
     "rollup-plugin-external-globals": "0.13.0",
