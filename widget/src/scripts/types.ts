@@ -61,21 +61,7 @@ export type GuestbookData = {
   visits: Record<string, VisitEntry[]>; // key - userId, chronological list
 };
 
-export type EventData = {
-  userId: string;
-  nick: string;
-  displayName: string;
-  badges: Array<{ type: string; version: string }>;
-  authorDetails?: { isChatOwner: boolean; isChatModerator: boolean };
-};
-
 // Shorthand for the second argument passed to a Command's `run` callback
 export type CommandEvent = Parameters<
   ConstructorParameters<typeof Command>[0]['run']
 >[1];
-
-export type BookQueueItem = {
-  count: number;
-  visit?: boolean;
-  onDone?: () => void;
-};

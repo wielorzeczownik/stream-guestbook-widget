@@ -1,21 +1,30 @@
 import type { StreamElements } from '@tixyel/streamelements';
 
-import {
-  DEFAULT_COVER_COLOR,
-  DEFAULT_DISPLAY_DURATION_S,
-  DEFAULT_PAGE_COLOR,
-  DEFAULT_RESET_COMMAND,
-  DEFAULT_SIGN_COMMAND,
-  DEFAULT_SIGN_REWARD,
-  DEFAULT_STAMP_COLOR,
-  DEFAULT_STAMPS_PER_PAGE,
-  DEFAULT_TOP_COMMAND,
-  DEFAULT_TOP_COUNT,
-  DEFAULT_VISITS_COMMAND,
-  FLIP_SPEED_MAP,
-  STREAK_RESET_DAYS,
-} from '@/constants';
 import type { Config } from '@/types';
+
+// flip speed - the dropdown value maps to a numeric multiplier applied to
+// the animation timing constants in book.ts. Higher = slower animation
+const FLIP_SPEED_MAP: Record<string, number> = {
+  slow: 2,
+  normal: 1,
+  fast: 0.5,
+};
+
+// streak resets if they missed more than this many days between streams
+const STREAK_RESET_DAYS = 7;
+
+// field defaults
+const DEFAULT_DISPLAY_DURATION_S = 5;
+const DEFAULT_STAMPS_PER_PAGE = 6;
+const DEFAULT_TOP_COUNT = 5;
+const DEFAULT_COVER_COLOR = '#1b1920';
+const DEFAULT_PAGE_COLOR = '#ffffff';
+const DEFAULT_STAMP_COLOR = '#1b1920';
+const DEFAULT_SIGN_COMMAND = 'sign';
+const DEFAULT_SIGN_REWARD = 'Sign Guestbook';
+const DEFAULT_RESET_COMMAND = 'reset';
+const DEFAULT_VISITS_COMMAND = 'visits';
+const DEFAULT_TOP_COMMAND = 'top';
 
 export function parseFields(
   raw: Record<string, StreamElements.CustomField.Value>

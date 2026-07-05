@@ -6,17 +6,25 @@ import {
   stagger,
 } from 'motion';
 
-import {
-  ANIM_START_DELAY,
-  COVER_SPEED_MULTIPLIER,
-  PAGE_SPEED_MULTIPLIER,
-  PAGE_STAGGER_MULTIPLIER,
-  POST_HIDE_CLEANUP_DELAY,
-  POST_OPEN_PAUSE,
-  POST_STAMP_PAUSE,
-  PRE_STAMP_PAUSE,
-} from '@/constants';
-import type { BookQueueItem, Config } from '@/types';
+import type { Config } from '@/types';
+
+// cover feels heavier so it flips slower than content pages
+const COVER_SPEED_MULTIPLIER = 1.5;
+const PAGE_SPEED_MULTIPLIER = 0.4;
+const PAGE_STAGGER_MULTIPLIER = 0.2;
+
+// slight delay so the fade-in settles before pages start moving
+const ANIM_START_DELAY = 0.6;
+const PRE_STAMP_PAUSE = 0.3;
+const POST_STAMP_PAUSE = 0.3;
+const POST_OPEN_PAUSE = 0.6;
+const POST_HIDE_CLEANUP_DELAY = 0.5;
+
+type BookQueueItem = {
+  count: number;
+  visit?: boolean;
+  onDone?: () => void;
+};
 
 class Book {
   private readonly wrapper: HTMLDivElement | null;

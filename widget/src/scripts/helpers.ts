@@ -1,8 +1,17 @@
 import Tixyel from '@tixyel/streamelements';
 
 import client from '@/client';
-import { SE_BOT_API } from '@/constants';
-import type { CommandEvent, EventData } from '@/types';
+import type { CommandEvent } from '@/types';
+
+const SE_BOT_API = 'https://api.streamelements.com/kappa/v2/bot';
+
+type EventData = {
+  userId: string;
+  nick: string;
+  displayName: string;
+  badges: Array<{ type: string; version: string }>;
+  authorDetails?: { isChatOwner: boolean; isChatModerator: boolean };
+};
 
 const state = { jwtToken: '' };
 
