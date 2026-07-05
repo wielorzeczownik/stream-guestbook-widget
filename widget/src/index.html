@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/index.scss" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Stream Guestbook</title>
+    <link href="./styles/index.scss" rel="stylesheet" />
     <script type="module" src="./scripts/index.ts"></script>
   </head>
   <body>
@@ -26,16 +27,18 @@
         </ul>
       </div>
       <template id="page-template">
-        <li class="book__list-item">
-          <div class="book__page">
-            <div class="book__page-face book__page-face--front">
-              <div class="book__stamps"></div>
+        <ul>
+          <li class="book__list-item">
+            <div class="book__page">
+              <div class="book__page-face book__page-face--front">
+                <div class="book__stamps"></div>
+              </div>
+              <div class="book__page-face book__page-face--back">
+                <div class="book__stamps"></div>
+              </div>
             </div>
-            <div class="book__page-face book__page-face--back">
-              <div class="book__stamps"></div>
-            </div>
-          </div>
-        </li>
+          </li>
+        </ul>
       </template>
     </div>
 
@@ -47,10 +50,10 @@
         <input
           id="dev-username"
           type="text"
-          value="TestUser"
-          placeholder="Username"
           autocomplete="username"
+          placeholder="Username"
           spellcheck="false"
+          value="TestUser"
         />
       </div>
 

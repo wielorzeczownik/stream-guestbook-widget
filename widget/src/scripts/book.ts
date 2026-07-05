@@ -20,7 +20,7 @@ import type { BookQueueItem, Config } from '@/types';
 
 class Book {
   private readonly wrapper: HTMLDivElement | null;
-  private readonly el: HTMLUListElement | null;
+  private readonly list: HTMLUListElement | null;
   private readonly queue: InstanceType<
     typeof Tixyel.modules.useQueue<BookQueueItem>
   >;
@@ -29,7 +29,7 @@ class Book {
   constructor(private readonly config: Config) {
     this.config = config;
     this.wrapper = document.getElementById('wrapper') as HTMLDivElement | null;
-    this.el = document.getElementById('book') as HTMLUListElement | null;
+    this.list = document.getElementById('book') as HTMLUListElement | null;
     this.queue = new Tixyel.modules.useQueue<BookQueueItem>({
       processor: async ({ value: { count, visit, onDone } }) => {
         await (visit ? this.showVisit(count) : this.showSign(count));
@@ -78,7 +78,7 @@ class Book {
 
   private reset(): void {
     const pageItemsToRemove =
-      this.el?.querySelectorAll<HTMLLIElement>(
+      this.list?.querySelectorAll<HTMLLIElement>(
         '.book__list-item:not(:first-child):not(:last-child)'
       ) ?? [];
     for (const pageItem of pageItemsToRemove) pageItem.remove();
@@ -87,7 +87,7 @@ class Book {
       '.book__list-item:first-child',
       '.book__list-item:last-child',
     ]) {
-      const cover = this.el?.querySelector<HTMLDivElement>(selector);
+      const cover = this.list?.querySelector<HTMLDivElement>(selector);
       if (!cover) continue;
       const page = this.getPage(cover);
       if (!page) continue;
@@ -98,7 +98,7 @@ class Book {
 
   private getItems(): HTMLLIElement[] {
     return [
-      ...(this.el?.querySelectorAll<HTMLLIElement>(
+      ...(this.list?.querySelectorAll<HTMLLIElement>(
         ':scope > .book__list-item'
       ) ?? []),
     ];
@@ -116,8 +116,9 @@ class Book {
     const template = document.getElementById(
       'page-template'
     ) as HTMLTemplateElement;
-    return (template.content.cloneNode(true) as DocumentFragment)
-      .firstElementChild as HTMLLIElement;
+    return (template.content.cloneNode(true) as DocumentFragment).querySelector(
+      '.book__list-item'
+    ) as HTMLLIElement;
   }
 
   private getGridLayout(stampsPerPage: number): {
@@ -147,12 +148,12 @@ class Book {
     const { stampsPerPage } = this.config;
 
     const contentPageItems =
-      this.el?.querySelectorAll<HTMLElement>(
+      this.list?.querySelectorAll<HTMLElement>(
         '.book__list-item:not(:first-child):not(:last-child)'
       ) ?? [];
     for (const pageItem of contentPageItems) pageItem.remove();
 
-    const backCover = this.el?.querySelector<HTMLElement>(
+    const backCover = this.list?.querySelector<HTMLElement>(
       '.book__list-item:last-child'
     );
 
@@ -198,9 +199,9 @@ class Book {
       }
 
       if (backCover) {
-        this.el?.insertBefore(pageElement, backCover);
+        this.list?.insertBefore(pageElement, backCover);
       } else {
-        this.el?.append(pageElement);
+        this.list?.append(pageElement);
       }
     }
 
@@ -297,7 +298,7 @@ class Book {
 
       seq.push([
         () =>
-          this.el
+          this.list
             ?.querySelector<HTMLElement>('.book__stamp--new')
             ?.classList.add('is-stamping'),
         { at: stampAt },
