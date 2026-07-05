@@ -69,7 +69,7 @@ function renderGuests(): void {
   const guests = Object.values(storage.data.guests).sort(
     (guestA, guestB) => guestB.count - guestA.count
   );
-  container.innerHTML = '';
+  container.replaceChildren();
 
   if (guests.length === 0) {
     const empty = document.createElement('div');
