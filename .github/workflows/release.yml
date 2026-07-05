@@ -112,6 +112,8 @@ jobs:
     timeout-minutes: 15
     permissions:
       contents: read
+      id-token: write
+      attestations: write
     steps:
       - name: Checkout tag
         uses: actions/checkout@v7
@@ -139,11 +141,24 @@ jobs:
           cp widget/export/${VERSION}/*.zip release/guestbook-widgetio.zip
           zip -j release/guestbook.zip widget/dist/*
 
+      - name: Compute SHA-256 checksums
+        shell: bash
+        working-directory: release
+        run: |
+          for f in *.zip; do
+            sha256sum "$f" > "$f.sha256"
+          done
+
+      - name: Attest release artifacts
+        uses: actions/attest-build-provenance@v4.1.1
+        with:
+          subject-path: release/*.zip
+
       - name: Upload artifact
         uses: actions/upload-artifact@v7.0.1
         with:
           name: widget-export
-          path: release/*.zip
+          path: release/*
 
   publish-release:
     needs:
