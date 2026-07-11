@@ -18,7 +18,7 @@
     "@html-eslint/eslint-plugin": "0.63.0",
     "@html-eslint/parser": "0.63.0",
     "@tixyel/cli": "3.6.0",
-    "@types/node": "26.1.0",
+    "@types/node": "26.1.1",
     "eslint": "10.6.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-simple-import-sort": "13.0.0",
