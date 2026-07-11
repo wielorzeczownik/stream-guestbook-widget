@@ -5,6 +5,21 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.14](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.13...v0.3.14) - 2026-07-11
+
+### Performance
+
+- Compress demo.webp ([040207a](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/040207aa6f5c645cf18cf684e55e975de11d6dd7))
+
+### Build System
+
+- Update dependency @types/node to v26.1.1 (#127) ([8199594](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/8199594d8b7f4dbfe0d752379a2cf81999228975))
+- Update dependency typescript-eslint to v8.63.0 (#125) ([24aeaf0](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/24aeaf0b148dbb10fd7898269a602f94b3c30d8d))
+- Update dependency eslint-plugin-unicorn to v71.1.0 (#124) ([154fc6d](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/154fc6d1bd470c2b3a7e7a4d077c03f3bf6e03d6))
+- Update dependency vitest to v4.1.10 (#123) ([475beeb](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/475beeb4a23810684c85481ab4467e53e21c54f4))
+- Update dependency eslint-plugin-unicorn to v71 ([baa3e41](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/baa3e41c9303a3a988568454fb21f294d6331862))
+- Update dependency eslint-plugin-unicorn to v70 ([63aa105](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/63aa105d7763e281a042763f6aeeb79292796e61))
+
 ## [0.3.13](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.12...v0.3.13) - 2026-07-05
 
 ### Refactoring
