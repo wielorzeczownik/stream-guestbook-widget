@@ -21,7 +21,7 @@
     "@types/node": "26.1.1",
     "eslint": "10.7.0",
     "eslint-config-prettier": "10.1.8",
-    "eslint-plugin-simple-import-sort": "13.0.0",
+    "eslint-plugin-simple-import-sort": "14.0.0",
     "eslint-plugin-sonarjs": "4.2.0",
     "eslint-plugin-unicorn": "71.1.0",
     "jiti": "2.7.0",
