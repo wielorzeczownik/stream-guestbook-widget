@@ -5,6 +5,32 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.15](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.14...v0.3.15) - 2026-07-21
+
+### Bug Fixes
+
+- Unicorn/prefer-simple-condition-first ([89ac430](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/89ac430f6e4db7b7a2cdb22769dff8dea0bc723c))
+
+### Build System
+
+- Update dependency eslint-plugin-unicorn to v72 ([583b0b2](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/583b0b2f948f52790dc2e9d0b8b1db394d5ea93f))
+- Resolve audit advisories ([589f1dd](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/589f1dd32a48deade72827f83bfe0c4b79c15dfa))
+- Update dependency eslint-plugin-simple-import-sort to v14 ([e0cd1e3](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/e0cd1e38f7790675ac4efcb1008db9d02c1a73f2))
+- Update dependency vite to v8.1.5 (#137) ([3070878](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/3070878f5285685feeb6dd886e4ce7da5f9db386))
+- Update dependency eslint-plugin-sonarjs to v4.2.0 (#135) ([126cc43](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/126cc434c08e7e206941f49b4818985abad8712c))
+- Update dependency typescript-eslint to v8.64.0 ([032d552](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/032d552415b6d391fd9464bce02c497051187a1d))
+- Update dependency eslint to v10.7.0 (#133) ([d56cef3](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/d56cef3380e0d47484cb475f74fb919c0f5c8724))
+- Update dependency @html-eslint/parser to v0.64.0 (#132) ([2355212](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/2355212c02d286e186bfc1f0590b9f400c26fd7d))
+- Update dependency @html-eslint/eslint-plugin to v0.64.0 (#131) ([bf0d7e2](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/bf0d7e2bae733562403f12723255dc315c13c96a))
+- Update dependency prettier to v3.9.5 (#130) ([3744652](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/37446522285e4187ba1fc8859418dad75eac3170))
+- Update dependency vite to v8.1.4 (#129) ([74b097b](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/74b097bab28950175204c79f1ff62eeb5e7744e7))
+
+### CI/CD
+
+- Update actions/setup-node action to v7 ([217dde7](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/217dde7f3e15f4e8f173273f6222f5c3b234296d))
+- Update softprops/action-gh-release action to v3.0.2 ([1620843](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/16208435c4c97bb06e985890cf4c353af8c64766))
+- Update davidanson/markdownlint-cli2-action action to v24 ([97d25c1](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/97d25c1046a578df740099beac00a23dad74604e))
+
 ## [0.3.14](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.13...v0.3.14) - 2026-07-11
 
 ### Performance
