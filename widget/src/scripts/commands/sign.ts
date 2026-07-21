@@ -76,7 +76,7 @@ export function initSign(config: Config): void {
   }
 
   client.on('event', (provider, event) => {
-    if (!config.enableSignReward || provider !== 'twitch') return;
+    if (provider !== 'twitch' || !config.enableSignReward) return;
 
     const twitchEvent = event as StreamElements.Event.Provider.Twitch.Event;
     if (twitchEvent.listener !== 'event') return;
