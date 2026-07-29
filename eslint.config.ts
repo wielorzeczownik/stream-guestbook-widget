@@ -10,7 +10,6 @@ export default [
     ignores: ['node_modules/', 'dist/', 'widget/compiled/', 'widget/export/'],
   },
   ...tseslint.configs.recommendedTypeChecked,
-  eslintConfigPrettier,
   unicorn.configs.recommended,
   sonarjs.configs?.recommended,
   {
@@ -91,4 +90,5 @@ export default [
       '@html-eslint/sort-attrs': 'warn',
     },
   },
+  eslintConfigPrettier,
 ];
