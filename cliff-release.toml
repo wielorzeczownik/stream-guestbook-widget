@@ -12,14 +12,21 @@ body = """
 **Release Date: {{ timestamp | date(format="%Y-%m-%d") }}**
 
 ### What's Changed
+{% if commits | length > 0 %}
 {% for group, grouped_commits in commits | group_by(attribute="group") %}
-{% if group != "Internal" %}
 #### {{ group }}
 {% for commit in grouped_commits %}
 - {% if remote.github.owner and remote.github.repo %}[{{ commit.id | truncate(length=7, end="") }}](https://github.com/{{ remote.github.owner }}/{{ remote.github.repo }}/commit/{{ commit.id }}){% else %}{{ commit.id | truncate(length=7, end="") }}{% endif %} {{ commit.message | split(pat="\n") | first | trim }}
 {% endfor %}
-{% endif %}
 {% endfor %}
+{% else %}
+¯\\\\\\_(ツ)\\_/¯
+
+The version number went up. Nobody knows why. Some YAML was touched and now
+you have a fresh tag to pull.
+
+New bugs were absolutely added. We just have not found them yet.
+{% endif %}
 {% if previous.version and remote.github.owner and remote.github.repo %}
 
 ---
@@ -39,7 +46,7 @@ filter_unconventional = true
 split_commits = false
 commit_parsers = [
   { breaking = true, group = "Breaking Changes" },
-  { message = "^chore\\(release\\)", group = "Internal" },
+  { message = "^chore\\(release\\)", skip = true },
   { message = "^chore\\(deps\\)", group = "Dependencies" },
   { message = "^chore", skip = true },
   { message = "^ci", skip = true },
