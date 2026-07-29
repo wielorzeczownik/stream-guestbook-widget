@@ -84,6 +84,78 @@ The widget needs a JWT token to post messages to chat.
 2. Click **Copy** next to your channel's JWT token.
 3. Paste it into the **StreamElements JWT token** field in the widget settings.
 
+## Configuration
+
+Every setting below is a field in the widget editor. Values outside the accepted range are clamped, not rejected – the widget always starts.
+
+### General
+
+| Field                          | Type     | Default   | Accepted             | Meaning                                                                                    |
+| ------------------------------ | -------- | --------- | -------------------- | ------------------------------------------------------------------------------------------ |
+| **StreamElements JWT token**   | text     | _(empty)_ | any                  | Required to post messages to chat. Without it the widget still animates, but stays silent. |
+| **Display duration (seconds)** | number   | `5`       | `1`–`60`             | How long the book stays open. Values below `1` are raised to `1`.                          |
+| **Flip speed**                 | dropdown | `Normal`  | Slow / Normal / Fast | Multiplies the animation timing: Slow is 2×, Fast is 0.5×.                                 |
+
+### Signing
+
+| Field                                                      | Type     | Default                                              | Accepted  | Meaning                                                                             |
+| ---------------------------------------------------------- | -------- | ---------------------------------------------------- | --------- | ----------------------------------------------------------------------------------- |
+| **Sign command name**                                      | text     | `sign`                                               | any       | Command viewers type, without the `!` prefix.                                       |
+| **Enable sign command on Twitch**                          | checkbox | off                                                  | on / off  | Off by default so Channel Points is the only Twitch trigger. Turn on to allow both. |
+| **Enable sign command on other platforms (YouTube, Kick)** | checkbox | on                                                   | on / off  | Those platforms have no Channel Points, so the command is the only trigger.         |
+| **Enable Channel Points reward (Twitch only)**             | checkbox | on                                                   | on / off  | Ignored on YouTube and Kick.                                                        |
+| **Channel Points reward name (Twitch)**                    | text     | `Sign Guestbook`                                     | any       | Must match the reward name on Twitch **exactly**, including capitalisation.         |
+| **Enable sign animation**                                  | checkbox | on                                                   | on / off  | Off keeps the counters and chat replies but shows nothing on screen.                |
+| **Enable sign message in chat**                            | checkbox | on                                                   | on / off  | Requires a JWT token.                                                               |
+| **Sign message**                                           | text     | `@{name} signed the Guestbook for the {count} time!` | any       | `{name}` is the signer, `{count}` their new total.                                  |
+| **Streak reset after X days without signing**              | number   | `7`                                                  | `1`–`365` | Days of absence that clear a viewer's streak. Values below `1` are raised to `1`.   |
+
+### Reset
+
+| Field                                | Type     | Default                                         | Accepted | Meaning                                                  |
+| ------------------------------------ | -------- | ----------------------------------------------- | -------- | -------------------------------------------------------- |
+| **Enable reset command**             | checkbox | off                                             | on / off | Off by default – resetting is destructive and mods-only. |
+| **Allow users to reset themselves**  | checkbox | off                                             | on / off | On lets any viewer wipe their own entry.                 |
+| **Reset command name**               | text     | `reset`                                         | any      | Command name, without the `!` prefix.                    |
+| **Reset message (self)**             | text     | `@{name}, your Guestbook entry has been reset!` | any      | `{name}` is the viewer who reset themselves.             |
+| **Reset message (mod resets other)** | text     | `@{target}'s Guestbook entry has been reset!`   | any      | `{target}` is the viewer that was reset.                 |
+| **Reset message (user not found)**   | text     | `@{target} hasn't signed the Guestbook yet!`    | any      | Sent when the named viewer has no entry.                 |
+
+### Visits
+
+| Field                                                | Type     | Default                                                 | Accepted | Meaning                                       |
+| ---------------------------------------------------- | -------- | ------------------------------------------------------- | -------- | --------------------------------------------- |
+| **Enable visits command**                            | checkbox | on                                                      | on / off | Lets viewers query their own sign count.      |
+| **Enable visits animation**                          | checkbox | on                                                      | on / off | Off replies in chat without opening the book. |
+| **Visits command name**                              | text     | `visits`                                                | any      | Command name, without the `!` prefix.         |
+| **Visits message (signed)**                          | text     | `@{name}, you've signed the Guestbook {count} time(s)!` | any      | `{name}`, `{count}`.                          |
+| **Visits message (never signed)**                    | text     | `@{name}, you haven't signed the Guestbook yet!`        | any      | `{name}`.                                     |
+| **Visits message for mods checking others (signed)** | text     | `@{target} has signed the Guestbook {count} time(s)!`   | any      | `{target}`, `{count}`.                        |
+| **Visits message for mods checking others (never)**  | text     | `@{target} hasn't signed the Guestbook yet!`            | any      | `{target}`.                                   |
+
+### Top
+
+| Field                               | Type     | Default                                | Accepted | Meaning                                    |
+| ----------------------------------- | -------- | -------------------------------------- | -------- | ------------------------------------------ |
+| **Enable top command**              | checkbox | on                                     | on / off | Lets viewers post the leaderboard to chat. |
+| **Top command name**                | text     | `top`                                  | any      | Command name, without the `!` prefix.      |
+| **Number of top visitors to show**  | number   | `5`                                    | `1`–`20` | Values below `1` are raised to `1`.        |
+| **Top message**                     | text     | `Top visitors: {list}`                 | any      | `{list}` is the rendered ranking.          |
+| **Top message (nobody signed yet)** | text     | `Nobody has signed the Guestbook yet!` | any      | Sent when the guestbook is empty.          |
+
+### Appearance
+
+| Field                                     | Type         | Default   | Accepted      | Meaning                                     |
+| ----------------------------------------- | ------------ | --------- | ------------- | ------------------------------------------- |
+| **Stamps per page**                       | number       | `6`       | `1`–`50`      | Signatures drawn on a page before it flips. |
+| **Cover color**                           | colourpicker | `#1b1920` | any colour    | Ignored when a cover texture is set.        |
+| **Front cover texture (overrides color)** | image        | _(empty)_ | URL or upload | Replaces the front cover colour.            |
+| **Back cover texture (overrides color)**  | image        | _(empty)_ | URL or upload | Replaces the back cover colour.             |
+| **Page color**                            | colourpicker | `#ffffff` | any colour    | Ignored when a page texture is set.         |
+| **Page texture (overrides page color)**   | image        | _(empty)_ | URL or upload | Replaces the page colour.                   |
+| **Stamp color**                           | colourpicker | `#1b1920` | any colour    | Ignored when a stamp texture is set.        |
+| **Stamp texture (empty = circle)**        | image        | _(empty)_ | URL or upload | Empty draws a plain filled circle.          |
+
 ## Commands
 
 | Command         | Who can use | What it does                             |

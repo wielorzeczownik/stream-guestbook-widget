@@ -16,9 +16,10 @@ A free StreamElements browser-source widget for Twitch, YouTube, and Kick – vi
 │   ├── styles/             SCSS source files
 │   ├── fields.json         StreamElements widget field definitions
 │   └── data.json           StreamElements widget data definitions
-├── tests/                  unit tests (Vitest)
+├── tests/                  vitest suites, mirroring the widget/src/scripts layout
 └── scripts/
-    └── bump-version.sh     determines and applies the next release version from git-cliff output
+    ├── bump-version.sh     determines and applies the next release version from git-cliff output
+    └── security-audit.sh   runs npm audit, attempts a fix, and reports what is left
 ```
 
 ## Development setup
@@ -26,52 +27,67 @@ A free StreamElements browser-source widget for Twitch, YouTube, and Kick – vi
 ```bash
 git clone https://github.com/wielorzeczownik/stream-guestbook-widget.git
 cd stream-guestbook-widget
-npm install
+npm ci
 npm run dev
 ```
 
 ## Running checks locally
 
+CI runs exactly these commands. Anything that passes here passes there.
+
 ### With tools installed
 
 ```bash
-# TypeScript
-npm run format:check
-npm run lint
-npm run lint:scss
-npm run typecheck
-npm run test
+# TypeScript, SCSS and formatting
+npm run format:check     # prettier --check . (whole repo, honours .prettierignore)
+npm run lint             # eslint, warnings are errors
+npm run lint:scss        # stylelint
+npm run typecheck        # tsc --noEmit
+npm test                 # vitest run
 npm run build
-npm audit
+npm audit                # reported, never blocking
 
 # Shell
 shfmt --diff scripts/
+shellcheck scripts/*.sh
+
+# Workflows
+actionlint
 
 # Markdown
-markdownlint-cli2 "**/*.md" '!node_modules/**'
+markdownlint-cli2 "**/*.md" '!node_modules/**' '!CHANGELOG.md'
 ```
+
+`npm run fix` applies every autofixable finding from eslint, stylelint and prettier in one go.
 
 ### With Docker (no local installs required)
 
 ```bash
 docker run --rm -v "$(pwd):/src" -w /src mvdan/shfmt --diff scripts/
 
-docker run --rm -v "$(pwd):/workdir" davidanson/markdownlint-cli2 "**/*.md" '!node_modules/**'
+docker run --rm -v "$(pwd):/mnt" -w /mnt koalaman/shellcheck:stable scripts/*.sh
+
+docker run --rm -v "$(pwd):/repo" -w /repo rhysd/actionlint:1.7.12
+
+docker run --rm -v "$(pwd):/workdir" davidanson/markdownlint-cli2 "**/*.md" '!node_modules/**' '!CHANGELOG.md'
 ```
 
 ## Commit style
 
 This project uses [Conventional Commits](https://www.conventionalcommits.org/). Commit messages drive automatic changelog generation and version bumping.
 
-| Prefix      | When to use                         |
-| ----------- | ----------------------------------- |
-| `feat:`     | New feature or behavior             |
-| `fix:`      | Bug fix                             |
-| `test:`     | Adding or updating tests            |
-| `chore:`    | Maintenance, dependency updates     |
-| `refactor:` | Code change without behavior change |
-| `docs:`     | Documentation only                  |
-| `ci:`       | CI/CD changes                       |
+| Prefix      | When to use                                |
+| ----------- | ------------------------------------------ |
+| `feat:`     | New feature or behavior                    |
+| `fix:`      | Bug fix                                    |
+| `perf:`     | Performance improvement                    |
+| `refactor:` | Code change without behavior change        |
+| `test:`     | Tests only                                 |
+| `docs:`     | Documentation only                         |
+| `style:`    | Formatting, no logic change                |
+| `build:`    | Build tooling and development dependencies |
+| `ci:`       | Workflows and CI configuration             |
+| `chore:`    | Maintenance that fits nothing above        |
 
 Breaking changes must include `BREAKING CHANGE:` in the commit footer.
 
