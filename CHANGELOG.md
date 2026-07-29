@@ -5,6 +5,39 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.16](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.15...v0.3.16) - 2026-07-29
+
+### Bug Fixes
+
+- Apply the prettier override last in the eslint chain ([25da8d5](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/25da8d5e83e6e1aaceb25f34c28e7c4bdbfdf284))
+
+### Refactoring
+
+- Collapse the bump script output writes into one helper ([9f56170](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/9f5617041be7c99cd1b3710eaf568dfbe42bf3eb))
+
+### Documentation
+
+- Document every widget field and the local check commands ([58d737a](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/58d737aa9799392e45cc8b4c682334c6e1b49500))
+
+### Build System
+
+- Group dependency updates and pin actions by digest ([37fa4c1](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/37fa4c11e06f181f1f0be498433ccf1bdf2316dd))
+- Update dependency sass to v1.101.3 (#145) ([da7acfe](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/da7acfe1023e6bdf098eaa293837cd35b3e7bb13))
+- Update dependency prettier to v3.9.6 (#144) ([8c6e1f8](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/8c6e1f84c84a9146e94ce3581e4ab2280bd9c248))
+- Update dependency typescript-eslint to v8.65.0 ([3ddb19e](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/3ddb19e2f678e7855633a12b797a2511fa332bc9))
+- Update dependency stylelint to v17.14.1 (#142) ([7faae8d](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/7faae8d1f354decf0e9bd34d19f2811ec2d776db))
+- Resolve audit advisories ([ed33058](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/ed33058aaf4938503458425063727a5632c3ade9))
+
+### CI/CD
+
+- Open and close a tracking issue for unresolved advisories ([3b6477b](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/3b6477b09cf02fa41f0f394d19961b1c504cb52e))
+- Never cancel an in-flight release and pin every action by digest ([cb0bfd4](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/cb0bfd4b8ada70c6f0d698167ba6b8da23303b3d))
+- Gate every job on a path filter instead of duplicating installs ([bf9b3fa](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/bf9b3fae4e392103ef3540e76816f2110c0c6f31))
+
+### Miscellaneous
+
+- Complete the manifest and widen the formatter scope ([6686790](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/66867908050848e62921ee86c0b1d480775521a4))
+
 ## [0.3.15](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.14...v0.3.15) - 2026-07-21
 
 ### Bug Fixes
