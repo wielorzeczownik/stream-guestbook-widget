@@ -1,5 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["group:monorepos", "group:recommended"],
   "platformAutomerge": true,
   "automergeType": "pr",
   "semanticCommits": "enabled",
@@ -13,6 +14,21 @@
       ],
       "depNameTemplate": "@tixyel/streamelements",
       "datasourceTemplate": "npm"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["^\\.github/workflows/[^/]+\\.yml$"],
+      "matchStrings": ["prettier@(?<currentValue>\\d+\\.\\d+\\.\\d+)"],
+      "depNameTemplate": "prettier",
+      "datasourceTemplate": "npm"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["^\\.github/workflows/[^/]+\\.yml$"],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>[a-z-]+) depName=(?<depName>\\S+)\\s+version: (?<currentValue>\\S+)"
+      ],
+      "versioningTemplate": "semver"
     }
   ],
   "packageRules": [
@@ -26,8 +42,14 @@
     },
     {
       "matchManagers": ["github-actions"],
+      "pinDigests": true,
       "minimumReleaseAge": "7 days",
       "semanticCommitType": "ci"
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "groupName": "github actions"
     },
     {
       "matchManagers": ["github-actions"],
@@ -36,6 +58,10 @@
         "actions/download-artifact"
       ],
       "groupName": "artifact actions"
+    },
+    {
+      "matchPackageNames": ["@tixyel/streamelements"],
+      "groupName": "streamelements"
     }
   ]
 }
