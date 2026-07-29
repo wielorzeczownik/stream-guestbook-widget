@@ -5,3 +5,7 @@ node_modules/
 widget/compiled/
 widget/dist/
 widget/export/
+
+CHANGELOG.md
+
+widget/.tixyel

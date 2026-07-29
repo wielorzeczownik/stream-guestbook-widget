@@ -33,7 +33,7 @@
       display: inline-block;
       width: 8px;
       height: 8px;
-      content: "";
+      content: '';
       background: $accent;
       border-radius: 50%;
     }
@@ -57,7 +57,7 @@
     }
   }
 
-  input[type="text"] {
+  input[type='text'] {
     box-sizing: border-box;
     width: 100%;
     padding: 4px 8px;
@@ -87,7 +87,9 @@
     background: transparent;
     border: 1px solid transparent;
     border-radius: 4px;
-    transition: background 0.1s, border-color 0.1s;
+    transition:
+      background 0.1s,
+      border-color 0.1s;
 
     &:hover {
       color: $accent;

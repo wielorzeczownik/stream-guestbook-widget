@@ -129,12 +129,8 @@ body {
       width: 100%;
       height: 100%;
       pointer-events: none;
-      content: "";
-      background: linear-gradient(
-        to left,
-        transparent 20%,
-        rgb(0 0 0 / 45%)
-      );
+      content: '';
+      background: linear-gradient(to left, transparent 20%, rgb(0 0 0 / 45%));
       opacity: calc(sin(var(--page-rotate, 180deg)));
     }
 
@@ -171,7 +167,7 @@ body {
     &::before {
       width: min(100cqw, 100cqh);
       height: min(100cqw, 100cqh);
-      content: "";
+      content: '';
       background-image: var(--stamp-texture, none);
       background-position: center;
       background-size: cover;

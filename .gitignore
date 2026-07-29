@@ -26,5 +26,6 @@ Thumbs.db
 
 # Editors
 .idea/
+.vscode/
 *.suo
 *.user
