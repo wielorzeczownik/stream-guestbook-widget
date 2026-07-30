@@ -5,6 +5,21 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.17](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.16...v0.3.17) - 2026-07-30
+
+### Build System
+
+- Update dependency @types/node to v26.1.2 ([81438bf](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/81438bfaf789d31a48709c480ea4a8df562c57e4))
+- Resolve audit advisories ([8d8dd4f](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/8d8dd4ff66ff9f70b065f908e50842066daaad84))
+- Update dependency sass to v1.102.0 ([1acb8f2](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/1acb8f2d657338979f7eead704a55a5320f9f0ec))
+- Update dependency eslint to v10.8.0 ([7319b08](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/7319b088b549bea323db4178973f10f5a398df91))
+
+### CI/CD
+
+- Update taiki-e/install-action action to v2.85.0 ([bdf277c](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/bdf277c1274ea2419dffc5d4e7d3f003e71bef11))
+- Derive the version bump from cliff.toml ([c0986e6](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/c0986e6839f3329d9546b851d2bd039fc1865795))
+- Fall back to a placeholder when a release has no user-facing commits ([75f6372](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/75f6372eef1f075ec9fd9d5f1de68629c66447ef))
+
 ## [0.3.16](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.15...v0.3.16) - 2026-07-29
 
 ### Bug Fixes
