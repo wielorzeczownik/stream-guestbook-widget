@@ -5,6 +5,20 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.18](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.17...v0.3.18) - 2026-07-31
+
+### Build System
+
+- Resolve audit advisories ([a4d8409](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/a4d840914beeddbb8e5eb9c9be41532512f14b74))
+
+### CI/CD
+
+- Sign bot commits via GitHub API (qoomon create-commit/create-tag) ([66a696a](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/66a696aae79a78931c7e9cdc59bc0dc0d0348db8))
+
+### Dependencies
+
+- Update dependency motion to v12.43.0 (#153) ([6911390](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/6911390610e9bdef63e348bfac47fd5a1151e073))
+
 ## [0.3.17](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.16...v0.3.17) - 2026-07-30
 
 ### Build System
