@@ -5,6 +5,17 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.19](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.18...v0.3.19) - 2026-08-02
+
+### Build System
+
+- Update dependency vite to v8.2.0 (#156) ([1a5207d](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/1a5207d8992043e48c68881d983ec1ef83293556))
+
+### CI/CD
+
+- Update taiki-e/install-action action to v2.85.2 (#155) ([6e0e408](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/6e0e408e9790f19594e7570f6de302bfbff4f68c))
+- Update taiki-e/install-action action to v2.85.1 (#154) ([3cd30e6](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/3cd30e69e45ab6a22e5e13afd802dd5fd33faf37))
+
 ## [0.3.18](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.17...v0.3.18) - 2026-07-31
 
 ### Build System
