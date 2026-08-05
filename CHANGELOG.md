@@ -5,6 +5,29 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.20](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.19...v0.3.20) - 2026-08-05
+
+### Refactoring
+
+- Collapse the two assign steps into one ([64440e5](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/64440e5933c83d37d155731b92a2c44fbe5c3377))
+
+### Build System
+
+- Resolve audit advisories ([fa35969](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/fa35969d63a41d5ad4ec82d83bfcb99cd005e389))
+
+### CI/CD
+
+- Publish through a deployment environment ([fcd2521](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/fcd25212ef92ee3e5308004b885a80fbc2cac667))
+- Update taiki-e/install-action action to v2.85.3 (#157) ([a64b09e](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/a64b09e3efb94fef7bc901f9ac758619a34c5d95))
+
+### Dependencies
+
+- Update dependency motion to v13 (#160) ([0657acd](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/0657acdd97be23f26df68efbb1115e624c9df54d))
+
+### Other
+
+- Ci/labels and automation (#158) ([dd07f99](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/dd07f995b6cc12ec5a47e083a0f9cce5f3cfdb87))
+
 ## [0.3.19](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.18...v0.3.19) - 2026-08-02
 
 ### Build System
