@@ -1,6 +1,6 @@
 ---
 title: Unresolved security advisories
-labels: security-advisory
+labels: security advisory
 ---
 
 `npm audit` reports advisories that `npm audit fix` could not resolve
