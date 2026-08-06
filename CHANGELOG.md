@@ -5,6 +5,29 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.21](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.20...v0.3.21) - 2026-08-06
+
+### Bug Fixes
+
+- Link bot authors and pull requests in the release notes ([ffe6e4b](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/ffe6e4b26cea63cc4f92c7f2b563a02ecf04a3a6))
+
+### Documentation
+
+- Drop the redundant comment above commit_preprocessors ([14f5db2](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/14f5db2e13bab90c4dcb569228f4a192e3596fb6))
+
+### Styling
+
+- Drop the no-op whitespace trim inside the profile url ([72e9ca6](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/72e9ca69a31853232090532d569d7519b255e417))
+
+### Build System
+
+- Update dependency typescript-eslint to v8.66.0 (#161) ([f89906b](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/f89906bbf88305fa00e800e9d531805443fdff29))
+- Update dependency eslint-plugin-unicorn to v73 (#162) ([005789b](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/005789b490e68517cd9eefbb0c98b1329924e5e7))
+
+### CI/CD
+
+- Update taiki-e/install-action action to v2.85.4 (#159) ([f2285cf](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/f2285cfa33fb71b1818a5c79b80d62cbaa7ab3d7))
+
 ## [0.3.20](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.19...v0.3.20) - 2026-08-05
 
 ### Refactoring

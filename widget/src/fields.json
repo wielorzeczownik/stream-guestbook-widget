@@ -9,7 +9,7 @@
   },
   "widgetVersion": {
     "type": "hidden",
-    "value": "0.3.20"
+    "value": "0.3.21"
   },
   "jwtToken": {
     "label": "StreamElements JWT token",
