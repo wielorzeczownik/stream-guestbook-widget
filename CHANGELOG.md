@@ -5,6 +5,24 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.22](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.21...v0.3.22) - 2026-08-09
+
+### Bug Fixes
+
+- Restore plain @mentions for human authors so avatars render ([2905d6f](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/2905d6f1d5d9ce1c1a47b65ebe39581b34304d82))
+
+### Build System
+
+- Update dependency vite to v8.2.1 (#166) ([f841d43](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/f841d43c465719113c08be327e5db14acd0d0d39))
+- Resolve audit advisories ([d0c660e](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/d0c660e12b20ecb65a2727750c48bb113d7e1184))
+- Resolve audit advisories ([0999067](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/0999067093cc6a3d3b99bb00acc69010785fc07e))
+
+### CI/CD
+
+- Update taiki-e/install-action action to v2.85.7 (#165) ([05aae52](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/05aae527f44f5a13e2ec1e81bf2eff0ead9004a3))
+- Update taiki-e/install-action action to v2.85.6 (#164) ([e3ba804](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/e3ba8045438a31f92a6755f3f256fbfc2b360bc7))
+- Update taiki-e/install-action action to v2.85.5 (#163) ([8974d98](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/8974d98e9d8540f46658b2861bd614f5fe7356c9))
+
 ## [0.3.21](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.20...v0.3.21) - 2026-08-06
 
 ### Bug Fixes
