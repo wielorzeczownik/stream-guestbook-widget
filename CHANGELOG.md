@@ -5,6 +5,23 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.23](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.22...v0.3.23) - 2026-08-16
+
+### Build System
+
+- Update dependency typescript-eslint to v8.67.0 (#172) ([3b6176d](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/3b6176dca7c48e27faa34ecb36ad1e18f1fef83c))
+- Update dependency stylelint-config-recess-order to v7.8.0 (#171) ([7e52b78](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/7e52b78d5939442a496b4d9dbbcdf0226c550e44))
+- Update dependency eslint to v10.8.1 (#169) ([4c992ea](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/4c992eac2014835ad16eb92ba1f0342431de4e73))
+- Update dependency @types/node to v26.2.0 (#168) ([fd96a29](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/fd96a29c0b4ab9c9db8dad3314f545237e566bb5))
+
+### CI/CD
+
+- Update davidanson/markdownlint-cli2-action action to v24.2.0 (#167) ([7638dc2](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/7638dc25d61d8a6755c83feb0b3ebd5aca8efb0c))
+
+### Dependencies
+
+- Update dependency motion to v13.1.0 (#173) ([7769ae7](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/7769ae75c001e800355774f08f410cbf2d011c73))
+
 ## [0.3.22](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.21...v0.3.22) - 2026-08-09
 
 ### Bug Fixes
