@@ -31,8 +31,8 @@
     "fix": "eslint --fix widget/src/scripts widget/src/index.html tests && stylelint --fix \"widget/src/styles/**/*.scss\" && prettier --write ."
   },
   "devDependencies": {
-    "@html-eslint/eslint-plugin": "0.64.0",
-    "@html-eslint/parser": "0.64.0",
+    "@html-eslint/eslint-plugin": "0.65.0",
+    "@html-eslint/parser": "0.65.0",
     "@tixyel/cli": "3.6.0",
     "@types/node": "26.2.0",
     "eslint": "10.8.1",
