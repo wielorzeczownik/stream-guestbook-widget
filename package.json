@@ -1,6 +1,6 @@
 {
   "name": "stream-guestbook-widget",
-  "version": "0.3.23",
+  "version": "0.3.24",
   "description": "A free StreamElements browser-source widget for Twitch, YouTube and Kick - viewers sign a virtual guestbook via chat command or Channel Points.",
   "license": "MIT",
   "author": "wielorzeczownik",

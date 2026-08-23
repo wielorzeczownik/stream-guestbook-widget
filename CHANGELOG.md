@@ -5,6 +5,26 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.24](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.23...v0.3.24) - 2026-08-23
+
+### Build System
+
+- Update dependency vite to v8.2.2 (#180) ([01ae073](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/01ae07345f81c1b321c188ca805c84b74101a85b))
+- Update dependency sass to v1.103.0 (#179) ([d7d4a10](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/d7d4a10c8d27aef675c17454bbdfeb8d586663ca))
+- Update dependency vitest to v4.1.11 (#177) ([fea1442](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/fea14425059d7fa63e59978c3adad56020c2004e))
+- Update html-eslint monorepo to v0.65.0 (#175) ([fc28370](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/fc28370f7a2c29adfb4a7b6d9b9c1211898512d5))
+
+### CI/CD
+
+- Update taiki-e/install-action action to v2.86.1 (#178) ([71e3dce](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/71e3dce9acae9cd84753d0a4d9ef39ccb06773a3))
+- Update taiki-e/install-action action to v2.85.13 (#176) ([797e8b9](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/797e8b93c881fb1b7c033930978750e5509ce5f4))
+- Update taiki-e/install-action action to v2.85.12 (#174) ([f26e460](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/f26e460fe74be191ec5f6e6f4eab37399f854a57))
+- Update github actions (#170) ([9f9deb1](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/9f9deb1e765682a756194232eb376f79522e8920))
+
+### Dependencies
+
+- Update dependency motion to v13.1.1 (#181) ([028832b](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/028832bb393b9c837d6e14cb8e07d63036d9d825))
+
 ## [0.3.23](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.22...v0.3.23) - 2026-08-16
 
 ### Build System
