@@ -5,6 +5,35 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.25](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.24...v0.3.25) - 2026-09-05
+
+### Build System
+
+- Update dependency @types/node to v26.4.1 (#196) ([ddead8f](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/ddead8f42a83db4e7fcd04e9dda23c8533636eed))
+- Update dependency typescript-eslint to v8.69.0 (#194) ([f453f49](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/f453f491caf68b2a5b48ace44778f19560a14864))
+- Resolve audit advisories ([cfb231a](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/cfb231a523696f634bd2f484030c29433fb3de9d))
+- Update dependency eslint-plugin-unicorn to v74 (#192) ([e15cbfa](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/e15cbfacde7e41d38073dcebc7238fae78e6d18f))
+- Update dependency @types/node to v26.4.0 (#189) ([f881954](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/f88195439ae87e7b6be5f763e99d6571e6685a62))
+- Update dependency typescript-eslint to v8.68.0 (#188) ([c7dee15](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/c7dee1531f15fe579ed96032553406bae15e219f))
+- Update dependency @types/node to v26.3.0 (#187) ([9b8a9dd](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/9b8a9dd8a8c36cc15e11af65fb23ceddc0642f45))
+- Update dependency eslint to v10.9.1 (#186) ([12fe332](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/12fe33233f3a74657a916f99d772a2f4620111a0))
+- Update dependency eslint to v10.9.0 (#184) ([cf22f90](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/cf22f90071c6e28ec594aa7792331aea40c8cd21))
+- Update dependency sass to v1.103.1 (#182) ([940bf51](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/940bf513405b593722d8e909d0011f26606acf37))
+
+### CI/CD
+
+- Update taiki-e/install-action action to v2.87.1 (#197) ([ece0870](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/ece087046e0e8a6cf2c854fee4826a66732ba36b))
+- Update taiki-e/install-action action to v2.87.0 (#195) ([17255d1](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/17255d185c7705cba6c1ff670f7694d09a7cd21e))
+- Update taiki-e/install-action action to v2.86.8 (#193) ([3d194ec](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/3d194ec90cd39ca719ffbe59ba7fe9e9152ca33f))
+- Update taiki-e/install-action action to v2.86.7 (#191) ([d18f093](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/d18f0933240d9310712f586fd6ca4cfc63dda370))
+- Update taiki-e/install-action action to v2.86.6 (#190) ([6ec17b0](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/6ec17b062c8043633f3439240d8a5295e034b1c0))
+- Update taiki-e/install-action action to v2.86.4 (#185) ([dadddbe](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/dadddbef640cb6d3c36b1cffb8b4db26ec46588a))
+- Update taiki-e/install-action action to v2.86.3 (#183) ([baf6424](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/baf6424fca83cca4e0250136d7309b35d28f097d))
+
+### Dependencies
+
+- Update dependency motion to v13.2.0 (#198) ([c6d4a70](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/c6d4a7047c24bcef729d0977aadee23257751bff))
+
 ## [0.3.24](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.23...v0.3.24) - 2026-08-23
 
 ### Build System
