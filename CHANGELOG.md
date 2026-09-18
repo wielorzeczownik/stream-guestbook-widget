@@ -5,6 +5,38 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.26](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.25...v0.3.26) - 2026-09-18
+
+### Build System
+
+- Update html-eslint monorepo to v0.66.0 (#216) ([57450b4](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/57450b45507e3a8abe80c9b50a96a040b664b643))
+- Update dependency sass to v1.104.1 (#214) ([2e226ae](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/2e226ae0592cfad9053c64b158eb0db8b497849c))
+- Update dependency vite to v8.3.0 (#211) ([d40c730](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/d40c73053a77f1af5190f3026f63119654ca9c14))
+- Update dependency @types/node to v26.5.1 (#210) ([a77002e](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/a77002e766f3ddedaab4c1a03bbf66eac54858cf))
+- Update dependency typescript-eslint to v8.70.0 (#207) ([54e92b7](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/54e92b724502e6d91a1ab7aeff047656e59dc077))
+- Update dependency @types/node to v26.5.0 (#206) ([fe39501](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/fe3950100f1778e9a08b6789578851b19b50cbd9))
+- Resolve audit advisories ([dad3f96](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/dad3f9627ad4f042452d4b40757af8a896d7345e))
+- Update dependency vitest to v5 (#200) ([f7fe29c](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/f7fe29c621027e3591b226310d8b78f0c62ac0be))
+- Update dependency stylelint to v17.15.0 (#204) ([a3fb4e3](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/a3fb4e366793958aa642fcb77d21892d293eb713))
+- Update dependency eslint to v10.10.0 (#203) ([e6563c7](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/e6563c717eb9e21c827e7059d1b5a0f0ab76e46c))
+- Update dependency sass to v1.104.0 (#202) ([65eea27](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/65eea2700a1dae37a2b423bdff06c665e8beed88))
+
+### CI/CD
+
+- Update taiki-e/install-action action to v2.87.10 (#217) ([52196a8](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/52196a814fdb32bb7dd713cade0c4c3015bd38d7))
+- Update taiki-e/install-action action to v2.87.9 (#215) ([eaae12a](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/eaae12ae01f580d9c0a35039947933b6b138d144))
+- Update taiki-e/install-action action to v2.87.8 (#213) ([f18826f](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/f18826fbad98dfa4cd787bb46f06e24239949803))
+- Update taiki-e/install-action action to v2.87.7 (#212) ([69247e0](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/69247e015a55f9694c24975758323b46b3868f81))
+- Update taiki-e/install-action action to v2.87.6 (#209) ([7fa27d0](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/7fa27d095885cfea90a5df5a4ef23adfb505ad39))
+- Update taiki-e/install-action action to v2.87.5 (#208) ([719b4db](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/719b4dba9cf85bfc7dfdec935b1460bc8b5e7ac3))
+- Update github actions (#205) ([f900399](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/f900399bbaca37bde5605b4fd21daa8f3dbf2c6d))
+- Update taiki-e/install-action action to v2.87.2 (#201) ([33df079](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/33df07932e63268767cb62a65d7eb050f2a904d6))
+- Update softprops/action-gh-release action to v3.0.3 (#199) ([5ee10ef](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/5ee10ef5cb422241c81033e88e51146ed26408a4))
+
+### Dependencies
+
+- Update dependency motion to v13.3.0 (#218) ([3e989f7](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/3e989f79f48ccf9687f4cdb5535e11a4e8a985dc))
+
 ## [0.3.25](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.24...v0.3.25) - 2026-09-05
 
 ### Build System
@@ -328,12 +360,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Bug Fixes
 
 - Resolve eslint-plugin-unicorn v68 breaking changes ([a4a7f63](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/a4a7f6350d3a5ea27da36a78c222100e91c52be0))
+- Resolve eslint-plugin-unicorn v68 breaking changes ([d2a450c](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/d2a450c6bfa857a56676e0729b8de709212d8494))
 
 ## [0.3.7](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.6...v0.3.7) - 2026-06-22
 
 ### Bug Fixes
 
-- Resolve eslint-plugin-unicorn v68 breaking changes ([d2a450c](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/d2a450c6bfa857a56676e0729b8de709212d8494))
 - Resolve eslint-plugin-unicorn v68 breaking changes ([ee93740](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/ee937404742f398bd7b405095f38d02f9536716e))
 
 ### Build System
@@ -567,6 +599,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### CI/CD
 
 - Split prod and dev vulnerability checks ([24ab449](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/24ab4498b4554d05f797a86a4efe5a976d13cfec))
+- Add npm audit step ([7a0e01c](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/7a0e01c7c4d563af13c3f89321eb6deb9d44896f))
 
 ### Dependencies
 
@@ -584,7 +617,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### CI/CD
 
-- Add npm audit step ([7a0e01c](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/7a0e01c7c4d563af13c3f89321eb6deb9d44896f))
 - Add npm security audit workflow ([07cdd90](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/07cdd90a077bf0f7274e561fe2a2b228e4e93b7e))
 - Drop [skip release] ([8fb4e27](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/8fb4e278277775e5b0ff1ce6576f186c2ef4198a))
 - Use semantic commit types for deps and github-actions ([6101675](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/6101675b5e485504f1632aa69efbe6e368e2c165))
