@@ -60,7 +60,7 @@ export function initReset(config: Config): void {
 
     Tixyel.logger.success(`[Guestbook] Reset entry for ${displayName} (self)`);
 
-    if (config.resetMessageSelf) return;
+    if (!config.resetMessageSelf) return;
 
     const message = config.resetMessageSelf.replace(
       '{name}',
