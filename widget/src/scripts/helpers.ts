@@ -26,15 +26,11 @@ export function getEventData(event: CommandEvent): EventData {
 export function isModeratorOrBroadcaster(event: CommandEvent): boolean {
   const data = getEventData(event);
 
-  if (event.provider === 'youtube') {
-    return !!(
-      data.authorDetails?.isChatOwner || data.authorDetails?.isChatModerator
-    );
-  }
-
-  return data.badges.some(
-    (badge) => badge.type === 'broadcaster' || badge.type === 'moderator'
-  );
+  return event.provider === 'youtube'
+    ? !!(data.authorDetails?.isChatOwner || data.authorDetails?.isChatModerator)
+    : data.badges.some(
+        (badge) => badge.type === 'broadcaster' || badge.type === 'moderator'
+      );
 }
 
 export function getUser(event: CommandEvent): {
