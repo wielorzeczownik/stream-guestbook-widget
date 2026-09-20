@@ -5,6 +5,24 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.27](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.26...v0.3.27) - 2026-09-20
+
+### Build System
+
+- Update dependency @types/node to v26.6.1 (#222) ([e76468c](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/e76468cfeac845dbf926b8d9d619cabfc5794278))
+- Update html-eslint monorepo to v0.66.1 (#225) ([d0a4d76](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/d0a4d76fe8def8317bec8cb603d1d4791e0e9afb))
+- Update dependency prettier to v3.9.7 (#223) ([ace7ce5](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/ace7ce59ee5a290aa5542eece5f2ab7eb440d8e9))
+- Update dependency vitest to v5.0.1 (#220) ([c9d2bf6](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/c9d2bf6684af793c66133a92dd2628804ca2cc6c))
+- Update dependency eslint-plugin-sonarjs to v4.2.1 (#219) ([6da656d](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/6da656de67d09502000c7ea767cab4fae4d688cd))
+
+### CI/CD
+
+- Update taiki-e/install-action action to v2.87.11 (#221) ([a908fe3](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/a908fe3593969e133cc1dab27561c1b580ddb7e9))
+
+### Dependencies
+
+- Update dependency motion to v13.4.0 (#227) ([a7f3291](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/a7f32914c99ff5a2780fecfd28d45a69599726f6))
+
 ## [0.3.26](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.25...v0.3.26) - 2026-09-18
 
 ### Build System
