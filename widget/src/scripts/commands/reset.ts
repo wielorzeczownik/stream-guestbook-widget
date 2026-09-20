@@ -60,13 +60,13 @@ export function initReset(config: Config): void {
 
     Tixyel.logger.success(`[Guestbook] Reset entry for ${displayName} (self)`);
 
-    if (config.resetMessageSelf) {
-      const message = config.resetMessageSelf.replace(
-        '{name}',
-        () => displayName
-      );
-      void sendChatMessage(message);
-    }
+    if (!config.resetMessageSelf) return;
+
+    const message = config.resetMessageSelf.replace(
+      '{name}',
+      () => displayName
+    );
+    void sendChatMessage(message);
   }
 
   void new Tixyel.actions.Command({

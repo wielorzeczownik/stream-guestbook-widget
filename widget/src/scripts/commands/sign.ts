@@ -68,8 +68,11 @@ export function initSign(config: Config): void {
   }
 
   function onCommand(event: CommandEvent): void {
-    if (event.provider === 'twitch' && !config.enableSignCommandTwitch) return;
-    if (event.provider !== 'twitch' && !config.enableSignCommandOther) return;
+    if (
+      (event.provider === 'twitch' && !config.enableSignCommandTwitch) ||
+      (event.provider !== 'twitch' && !config.enableSignCommandOther)
+    )
+      return;
 
     const { userId, displayName } = getUser(event);
     sign(userId, displayName, event.provider);
@@ -82,8 +85,11 @@ export function initSign(config: Config): void {
     if (twitchEvent.listener !== 'event') return;
 
     const inner = twitchEvent.event;
-    if (inner.type !== 'channelPointsRedemption') return;
-    if (inner.data.redemption !== config.signRewardName) return;
+    if (
+      inner.type !== 'channelPointsRedemption' ||
+      inner.data.redemption !== config.signRewardName
+    )
+      return;
 
     sign(
       inner.data.providerId,
