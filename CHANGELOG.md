@@ -5,6 +5,26 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.28](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.27...v0.3.28) - 2026-09-25
+
+### Build System
+
+- Update dependency typescript-eslint to v8.70.1 (#233) ([d288df7](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/d288df78f2a1a523ef7385cd9e4cd3bf0e154f31))
+- Update dependency eslint-plugin-unicorn to v76 (#232) ([b539268](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/b5392684cf257e46d43507ab25bf8b369a91971c))
+- Update dependency eslint to v10.11.0 (#230) ([553399b](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/553399b356f2b83febaf3f31ea12023b5b24d896))
+- Update dependency @types/node to v26.6.2 (#229) ([b73e492](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/b73e49239ba9f2dfccf80fd12066b49b7da2d00d))
+- Update dependency prettier to v3.9.8 (#228) ([8546612](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/85466129ff83eaaa2e0530f6a99c19a4ef2a3df9))
+- Update dependency eslint-plugin-unicorn to v75 (#224) ([588eec0](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/588eec0d156a0957e5018ab0f02ba38a1e49991d))
+
+### CI/CD
+
+- Update taiki-e/install-action action to v2.87.13 (#231) ([edf4f3d](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/edf4f3d05fbd9554438359f55c186d69e980a2a7))
+- Update github actions (#226) ([6101eea](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/6101eea2c95912f99cae58776ec41f7c14a880e4))
+
+### Dependencies
+
+- Update dependency motion to v13.4.1 (#235) ([1b47b9b](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/1b47b9b192a218759b52763d5265cc38d2f2e420))
+
 ## [0.3.27](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.26...v0.3.27) - 2026-09-20
 
 ### Build System
