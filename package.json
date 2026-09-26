@@ -41,7 +41,7 @@
     "eslint-plugin-sonarjs": "4.2.1",
     "eslint-plugin-unicorn": "76.0.0",
     "jiti": "2.7.0",
-    "prettier": "3.9.8",
+    "prettier": "3.9.9",
     "rollup-plugin-external-globals": "0.13.0",
     "sass": "1.105.0",
     "stylelint": "17.15.0",
