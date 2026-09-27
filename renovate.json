@@ -66,6 +66,10 @@
     {
       "matchPackageNames": ["@tixyel/streamelements"],
       "groupName": "streamelements"
+    },
+    {
+      "matchPackageNames": ["typescript", "typescript-eslint"],
+      "groupName": "typescript"
     }
   ]
 }
