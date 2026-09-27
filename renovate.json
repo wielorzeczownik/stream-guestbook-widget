@@ -68,8 +68,8 @@
       "groupName": "streamelements"
     },
     {
-      "matchPackageNames": ["typescript", "typescript-eslint"],
-      "groupName": "typescript"
+      "matchPackageNames": ["typescript"],
+      "allowedVersions": "<6.1.0"
     }
   ]
 }
