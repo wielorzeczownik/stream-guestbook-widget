@@ -5,6 +5,25 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.31](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.30...v0.3.31) - 2026-09-29
+
+### Bug Fixes
+
+- Cap typescript instead of grouping (#244) ([c445c58](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/c445c58191596e807e651fd92518212209b6d852))
+
+### Build System
+
+- Update dependency vitest to v5.0.2 (#246) ([c1f69bf](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/c1f69bfcbd51692abeb96d7cf452e9f4a8810454))
+
+### CI/CD
+
+- Update taiki-e/install-action action to v2.87.17 (#241) ([2e94f96](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/2e94f963cc6b677e8569549df17f68fcfa71b9d3))
+
+### Miscellaneous
+
+- Group typescript+typescript-eslint (#243) ([ee4158e](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/ee4158ee7fb1418f98f7f5c4e45a60d8cf16b7d9))
+- Enable vulnerabilityAlerts (#242) ([5fad615](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/5fad615c5bee208dc7a6b4a2475900326a579763))
+
 ## [0.3.30](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.29...v0.3.30) - 2026-09-27
 
 ### Build System
