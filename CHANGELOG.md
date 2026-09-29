@@ -5,6 +5,16 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.32](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.31...v0.3.32) - 2026-09-29
+
+### Build System
+
+- Update dependency @types/node to v26.6.3 (#248) ([975b750](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/975b750380b4907edc39a2a4ee6170621a952a75))
+
+### Dependencies
+
+- Update dependency motion to v13.4.4 (#247) ([78bcec1](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/78bcec1c0eea4e87420bc697801528d0b9413103))
+
 ## [0.3.31](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.30...v0.3.31) - 2026-09-29
 
 ### Bug Fixes
