@@ -5,6 +5,25 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.33](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.32...v0.3.33) - 2026-10-03
+
+### Build System
+
+- Resolve audit advisories ([aab3762](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/aab37621eda2b87849aac25ec82d8aafc89a5840))
+- Update dependency sass to v1.105.1 (#254) ([d8ecda3](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/d8ecda35dbb4dd4310ddcc7e757c504195a47b0b))
+- Update dependency typescript-eslint to v8.71.0 (#252) ([f8dcbb6](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/f8dcbb608eaf8489de34b80db51f3649f4da9f77))
+- Update dependency eslint-plugin-sonarjs to v4.2.2 (#251) ([17d0050](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/17d0050f6ea33c092f01ac9debe67411ee5cda99))
+- Resolve audit advisories ([c04c7eb](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/c04c7eb8493a248da6eca3fa3e4680591243b2fe))
+
+### CI/CD
+
+- Update taiki-e/install-action action to v2.87.20 (#250) ([b364455](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/b364455f9b2594493d9022cedc23b293eaef1cbf))
+- Update taiki-e/install-action action to v2.87.18 (#249) ([7d8b086](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/7d8b0860c3a049fb0ad30898ded781d9dfa9916b))
+
+### Dependencies
+
+- Update dependency motion to v13.4.6 (#253) ([fee5431](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/fee54310cba91a6393b7d9ab3c342d1869a3d47d))
+
 ## [0.3.32](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.31...v0.3.32) - 2026-09-29
 
 ### Build System
