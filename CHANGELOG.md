@@ -5,6 +5,23 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.34](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.33...v0.3.34) - 2026-10-05
+
+### Build System
+
+- Update dependency @types/node to v26.6.4 (#261) ([449d645](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/449d645c8c3cf193bc46c0a80df6cdc2cbff092b))
+- Update dependency stylelint to v17.16.0 (#259) ([cc5d386](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/cc5d3861989b6d04104c7af257e31073391d7741))
+- Update dependency vite to v8.3.2 (#258) ([4b6b6e3](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/4b6b6e34a6992d6184202e0b72e461e2183eaef3))
+- Update dependency vitest to v5.0.3 (#256) ([b176eb3](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/b176eb3768016e62a4eb4bb80349206822b3e2f6))
+
+### CI/CD
+
+- Update taiki-e/install-action action to v2.87.21 (#257) ([2e4af26](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/2e4af26978036aa7380f43008e9699daa96fd78b))
+
+### Dependencies
+
+- Update dependency motion to v13.5.0 (#260) ([08c2515](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/08c251569f81520abe4c4b6d8c8e8c55cf8d4742))
+
 ## [0.3.33](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.32...v0.3.33) - 2026-10-03
 
 ### Build System
