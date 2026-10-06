@@ -5,6 +5,16 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.35](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.34...v0.3.35) - 2026-10-06
+
+### Build System
+
+- Update dependency eslint to v10.12.0 (#265) ([0f9b712](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/0f9b712c2e159df9447473f4f97ebd242eeb15b1))
+
+### Dependencies
+
+- Update dependency motion to v13.5.1 (#262) ([9ac677c](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/9ac677c4c8614eaadccf1b642b0ab04122a427af))
+
 ## [0.3.34](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.33...v0.3.34) - 2026-10-05
 
 ### Build System
