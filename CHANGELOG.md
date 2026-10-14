@@ -5,6 +5,34 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.36](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.35...v0.3.36) - 2026-10-14
+
+### Build System
+
+- Update dependency eslint-plugin-unicorn to v77 (#280) ([8b785b8](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/8b785b834c454ad9a8ae7856a070b20de1e5416f))
+- Update dependency stylelint-order to v8.1.2 (#277) ([62de15b](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/62de15b42c56f0101ad8b095258bbe76f2f0d446))
+- Update dependency prettier to v3.9.10 (#276) ([d9653ea](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/d9653ea8df432be798ccbe8dd99783ea13e66bc3))
+- Update dependency @types/node to v26.6.5 (#274) ([2e1a452](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/2e1a4528c419d7fabb4d1a04bb47db3f8c227987))
+- Update dependency vite to v8.3.4 (#273) ([dfcba47](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/dfcba47def77d0e5c2ba2a11f9f43388fca3d910))
+- Update dependency vite to v8.3.3 (#269) ([ae3b321](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/ae3b3211ef8743420ffba971c8f4d4bdafc8084e))
+- Update dependency typescript-eslint to v8.71.1 (#268) ([6f2ca48](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/6f2ca48a78f5576862c82eff32936cbdb51f2509))
+- Resolve audit advisories ([f7e3e06](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/f7e3e06ee0f5a7fe026a8ee6df362e8b899c3238))
+
+### CI/CD
+
+- Update artifact actions (#279) ([e1110ca](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/e1110caeb9c49abadddf970caa4b967359267f80))
+- Update taiki-e/install-action action to v2.87.26 (#278) ([52a4397](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/52a4397f658a39b7ca5aceea7415f58331ead537))
+- Update taiki-e/install-action action to v2.87.25 (#275) ([8a65c5a](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/8a65c5ab691b87a42567342543a3e3fc3d35325e))
+- Update taiki-e/install-action action to v2.87.24 (#272) ([c81ff51](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/c81ff51cef39faa35f140dd03ef4284f3a47764e))
+- Update taiki-e/install-action action to v2.87.23 (#271) ([d3757fb](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/d3757fb92f030aa5ec2d816eff055b2fd98d0354))
+- Update codelytv/pr-size-labeler action to v1.12.0 (#270) ([dd9f24a](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/dd9f24a39d60ba2f7dedd1391653500e414b0997))
+- Update taiki-e/install-action action to v2.87.22 (#267) ([c182650](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/c182650a0b6912b9cb38f487599a6a3eff0d8460))
+- Update codelytv/pr-size-labeler action to v1.11.1 (#264) ([b4433a9](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/b4433a99e648ee0389839cebdc41554355dca393))
+
+### Dependencies
+
+- Update dependency motion to v14 (#263) ([eb998f4](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/eb998f40e812cd11ab1ab4478cd9d328c56b9459))
+
 ## [0.3.35](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.34...v0.3.35) - 2026-10-06
 
 ### Build System
