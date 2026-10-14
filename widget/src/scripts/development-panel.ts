@@ -1,4 +1,4 @@
-import '@styles/dev-panel.scss';
+import '@styles/development-panel.scss';
 
 import Tixyel from '@tixyel/streamelements';
 
@@ -10,7 +10,7 @@ import type { Config } from '@/types';
 function getName(): string {
   return (
     (
-      document.getElementById('dev-username') as HTMLInputElement | null
+      document.getElementById('development-username') as HTMLInputElement | null
     )?.value.trim() ?? 'TestUser'
   );
 }
@@ -63,7 +63,7 @@ function emulateChannelPoints(name: string, rewardName: string): void {
 }
 
 function renderGuests(): void {
-  const container = document.querySelector('#dev-panel-guests');
+  const container = document.querySelector('#development-panel-guests');
   if (!container) return;
 
   const guests = Object.values(storage.data.guests).sort(
@@ -73,7 +73,7 @@ function renderGuests(): void {
 
   if (guests.length === 0) {
     const empty = document.createElement('div');
-    empty.className = 'dev-panel__empty';
+    empty.className = 'development-panel__empty';
     empty.textContent = 'no guests yet';
     container.append(empty);
     return;
@@ -81,15 +81,15 @@ function renderGuests(): void {
 
   for (const [index, guest] of guests.entries()) {
     const row = document.createElement('div');
-    row.className = 'dev-panel__guest-row';
-    row.innerHTML = `<span>${index + 1}. ${guest.displayName}</span><span class="dev-panel__guest-count">×${guest.count}</span>`;
+    row.className = 'development-panel__guest-row';
+    row.innerHTML = `<span>${index + 1}. ${guest.displayName}</span><span class="development-panel__guest-count">×${guest.count}</span>`;
     container.append(row);
   }
 }
 
 export function initDevelopmentPanel(config: Config): void {
   const signYoutube = document.getElementById(
-    'dev-sign-youtube'
+    'development-sign-youtube'
   ) as HTMLButtonElement | null;
   signYoutube?.addEventListener('click', () => {
     emulateCommand(
@@ -102,7 +102,7 @@ export function initDevelopmentPanel(config: Config): void {
   });
 
   const signTwitch = document.getElementById(
-    'dev-sign-twitch'
+    'development-sign-twitch'
   ) as HTMLButtonElement | null;
   signTwitch?.addEventListener('click', () => {
     emulateCommand(
@@ -114,7 +114,7 @@ export function initDevelopmentPanel(config: Config): void {
   });
 
   const signPoints = document.getElementById(
-    'dev-sign-points'
+    'development-sign-points'
   ) as HTMLButtonElement | null;
   signPoints?.addEventListener('click', () => {
     emulateChannelPoints(getName(), config.signRewardName);
@@ -122,7 +122,7 @@ export function initDevelopmentPanel(config: Config): void {
   });
 
   const visitsSelf = document.getElementById(
-    'dev-visits-self'
+    'development-visits-self'
   ) as HTMLButtonElement | null;
   visitsSelf?.addEventListener('click', () => {
     emulateCommand(
@@ -133,7 +133,7 @@ export function initDevelopmentPanel(config: Config): void {
   });
 
   const visitsOther = document.getElementById(
-    'dev-visits-other'
+    'development-visits-other'
   ) as HTMLButtonElement | null;
   visitsOther?.addEventListener('click', () => {
     emulateCommand(
@@ -145,7 +145,7 @@ export function initDevelopmentPanel(config: Config): void {
   });
 
   const resetOther = document.getElementById(
-    'dev-reset-other'
+    'development-reset-other'
   ) as HTMLButtonElement | null;
   resetOther?.addEventListener('click', () => {
     emulateCommand(
@@ -158,7 +158,7 @@ export function initDevelopmentPanel(config: Config): void {
   });
 
   const topButton = document.getElementById(
-    'dev-top'
+    'development-top'
   ) as HTMLButtonElement | null;
   topButton?.addEventListener('click', () => {
     emulateCommand(
@@ -170,7 +170,7 @@ export function initDevelopmentPanel(config: Config): void {
   });
 
   const animSign = document.getElementById(
-    'dev-anim-sign'
+    'development-anim-sign'
   ) as HTMLButtonElement | null;
   animSign?.addEventListener('click', () => {
     // Fallback to 1 so the animation always runs even if the guestbook is empty
@@ -178,21 +178,21 @@ export function initDevelopmentPanel(config: Config): void {
   });
 
   const animVisits = document.getElementById(
-    'dev-anim-visits'
+    'development-anim-visits'
   ) as HTMLButtonElement | null;
   animVisits?.addEventListener('click', () => {
     queueVisit(Object.keys(storage.data.guests).length || 1);
   });
 
   const resetSession = document.getElementById(
-    'dev-reset-session'
+    'development-reset-session'
   ) as HTMLButtonElement | null;
   resetSession?.addEventListener('click', () => {
     signedThisStream.clear();
   });
 
   const clearAll = document.getElementById(
-    'dev-clear-all'
+    'development-clear-all'
   ) as HTMLButtonElement | null;
   clearAll?.addEventListener('click', () => {
     storage.update({ guests: {}, visits: {} });
