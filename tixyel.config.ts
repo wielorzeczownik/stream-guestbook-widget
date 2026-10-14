@@ -109,7 +109,8 @@ export default defineConfig({
       'css.txt': 'css',
       'fields.txt': 'fields',
     },
-    htmlRegex: /<div id="widget">([\s\S]*?)<\/div>\s*<div id="development-panel"/i,
+    htmlRegex:
+      /<div id="widget">([\s\S]*?)<\/div>\s*<div id="development-panel"/i,
     obfuscation: {
       javascript: {
         compact: true,
