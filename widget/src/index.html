@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Stream Guestbook</title>
-    <link href="./styles/index.scss" rel="stylesheet" />
-    <script type="module" src="./scripts/index.ts"></script>
+    <link href="styles/index.scss" rel="stylesheet" />
+    <script type="module" src="scripts/index.ts"></script>
   </head>
   <body>
     <div id="widget">
@@ -42,13 +42,13 @@
       </template>
     </div>
 
-    <div id="dev-panel" class="dev-panel">
-      <div class="dev-panel__header">Dev Panel</div>
+    <div id="development-panel" class="development-panel">
+      <div class="development-panel__header">Dev Panel</div>
 
-      <div class="dev-panel__section">
-        <div class="dev-panel__section-title">User</div>
+      <div class="development-panel__section">
+        <div class="development-panel__section-title">User</div>
         <input
-          id="dev-username"
+          id="development-username"
           type="text"
           autocomplete="username"
           placeholder="Username"
@@ -57,38 +57,48 @@
         />
       </div>
 
-      <div class="dev-panel__section">
-        <div class="dev-panel__section-title">Sign</div>
-        <button id="dev-sign-youtube">via YouTube command</button>
-        <button id="dev-sign-twitch">via Twitch command</button>
-        <button id="dev-sign-points">via Channel Points (Twitch)</button>
+      <div class="development-panel__section">
+        <div class="development-panel__section-title">Sign</div>
+        <button id="development-sign-youtube">via YouTube command</button>
+        <button id="development-sign-twitch">via Twitch command</button>
+        <button id="development-sign-points">
+          via Channel Points (Twitch)
+        </button>
       </div>
 
-      <div class="dev-panel__section">
-        <div class="dev-panel__section-title">Commands</div>
-        <button id="dev-visits-self">!visits (self, YouTube)</button>
-        <button id="dev-visits-other">!visits @user (mod)</button>
-        <button id="dev-reset-other">!reset @user (mod)</button>
-        <button id="dev-top">!top (mod)</button>
+      <div class="development-panel__section">
+        <div class="development-panel__section-title">Commands</div>
+        <button id="development-visits-self">!visits (self, YouTube)</button>
+        <button id="development-visits-other">!visits @user (mod)</button>
+        <button id="development-reset-other">!reset @user (mod)</button>
+        <button id="development-top">!top (mod)</button>
       </div>
 
-      <div class="dev-panel__section">
-        <div class="dev-panel__section-title">Animations (UI only)</div>
-        <button id="dev-anim-sign">Sign animation</button>
-        <button id="dev-anim-visits">Visits animation</button>
+      <div class="development-panel__section">
+        <div class="development-panel__section-title">Animations (UI only)</div>
+        <button id="development-anim-sign">Sign animation</button>
+        <button id="development-anim-visits">Visits animation</button>
       </div>
 
-      <div class="dev-panel__section">
-        <div class="dev-panel__section-title">Session</div>
-        <button id="dev-reset-session">Reset session (allow re-sign)</button>
-        <button id="dev-clear-all" class="dev-panel__button--danger">
+      <div class="development-panel__section">
+        <div class="development-panel__section-title">Session</div>
+        <button id="development-reset-session">
+          Reset session (allow re-sign)
+        </button>
+        <button
+          id="development-clear-all"
+          class="development-panel__button--danger"
+        >
           Clear ALL data
         </button>
       </div>
 
-      <div class="dev-panel__section">
-        <div class="dev-panel__section-title">Guests</div>
-        <div id="dev-panel-guests" class="dev-panel__guests"></div>
+      <div class="development-panel__section">
+        <div class="development-panel__section-title">Guests</div>
+        <div
+          id="development-panel-guests"
+          class="development-panel__guests"
+        ></div>
       </div>
     </div>
   </body>
