@@ -5,6 +5,21 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.37](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.36...v0.3.37) - 2026-10-15
+
+### Build System
+
+- Update dependency vitest to v5.0.4 (#282) ([dc59713](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/dc597136a4e7b7993110742027a22454d9fa2a88))
+- Update dependency @tixyel/cli to v3.7.0 (#283) ([d925d90](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/d925d90e9899b7be827a226cf00ecace3a13c68d))
+
+### CI/CD
+
+- Update actions/setup-node action to v7.1.0 (#281) ([c5110e1](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/c5110e19b5cb95e6411bddb74d135522437881b0))
+
+### Dependencies
+
+- Update dependency @tixyel/streamelements to v7.15.0 (#284) ([ad3bf2a](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/ad3bf2a7ac51c3bde2647bbbbc39d9cbaada8019))
+
 ## [0.3.36](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.35...v0.3.36) - 2026-10-14
 
 ### Build System
