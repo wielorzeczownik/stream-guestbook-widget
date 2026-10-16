@@ -1,7 +1,7 @@
 import Tixyel, { type StreamElements } from '@tixyel/streamelements';
 
 import { queueSign } from '@/book';
-import client from '@/client';
+import client, { logger } from '@/client';
 import { COMMAND_PREFIX } from '@/constants';
 import { getUser, sendChatMessage } from '@/helpers';
 import { signedThisStream, storage } from '@/storage';
@@ -15,7 +15,7 @@ export function initSign(config: Config): void {
     via: 'command' | 'reward' = 'command'
   ): void {
     if (signedThisStream.has(userId)) {
-      Tixyel.logger.debug(
+      logger.debug(
         `[Guestbook] ${displayName} already signed this stream`
       );
       return;
@@ -62,7 +62,7 @@ export function initSign(config: Config): void {
       void sendChatMessage(message);
     }
 
-    Tixyel.logger.success(
+    logger.success(
       `[Guestbook] ${displayName} signed (visit #${newCount})`
     );
   }
@@ -113,7 +113,7 @@ export function initSign(config: Config): void {
     run() {
       const count = Object.keys(storage.data.guests).length || 1;
       queueSign(count);
-      Tixyel.logger.success('[Guestbook] Test animation triggered');
+      logger.success('[Guestbook] Test animation triggered');
     },
   });
 
@@ -122,7 +122,7 @@ export function initSign(config: Config): void {
     name: 'Reset stream session (allow re-signing)',
     run() {
       signedThisStream.clear();
-      Tixyel.logger.success('[Guestbook] Stream session reset');
+      logger.success('[Guestbook] Stream session reset');
     },
   });
 }

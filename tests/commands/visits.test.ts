@@ -26,14 +26,16 @@ vi.mock('@/helpers', async (orig) => ({
   ...(await orig<typeof import('@/helpers')>()),
   sendChatMessage: mockSendMessage,
 }));
-vi.mock('@/client', () => ({ default: { on: vi.fn() } }));
+vi.mock('@/client', () => ({
+  default: { on: vi.fn() },
+  logger: { success: vi.fn(), debug: vi.fn() },
+}));
 
 const MockCommand = vi.hoisted(() => vi.fn());
 vi.mock('@tixyel/streamelements', () => ({
   default: {
     Client: vi.fn(),
     actions: { Command: MockCommand, Button: vi.fn() },
-    logger: { success: vi.fn(), debug: vi.fn() },
     SeAPI: Promise.resolve({ sendMessage: vi.fn() }),
   },
   StreamElements: {},

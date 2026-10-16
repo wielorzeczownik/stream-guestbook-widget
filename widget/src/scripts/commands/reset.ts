@@ -1,5 +1,6 @@
 import Tixyel from '@tixyel/streamelements';
 
+import { logger } from '@/client';
 import { COMMAND_PREFIX } from '@/constants';
 import { getUser, isModeratorOrBroadcaster, sendChatMessage } from '@/helpers';
 import { signedThisStream, storage } from '@/storage';
@@ -38,7 +39,7 @@ export function initReset(config: Config): void {
       const [userId] = entry;
       resetUser(userId);
 
-      Tixyel.logger.success(
+      logger.success(
         `[Guestbook] Reset entry for ${target} (mod action)`
       );
 
@@ -58,7 +59,7 @@ export function initReset(config: Config): void {
     const { userId, displayName } = getUser(event);
     resetUser(userId);
 
-    Tixyel.logger.success(`[Guestbook] Reset entry for ${displayName} (self)`);
+    logger.success(`[Guestbook] Reset entry for ${displayName} (self)`);
 
     if (!config.resetMessageSelf) return;
 
@@ -83,7 +84,7 @@ export function initReset(config: Config): void {
     run() {
       storage.update({ guests: {}, visits: {} });
       signedThisStream.clear();
-      Tixyel.logger.success('[Guestbook] All data cleared');
+      logger.success('[Guestbook] All data cleared');
     },
   });
 }

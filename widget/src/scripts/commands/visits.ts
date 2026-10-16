@@ -1,6 +1,7 @@
 import Tixyel from '@tixyel/streamelements';
 
 import { queueVisit } from '@/book';
+import { logger } from '@/client';
 import { COMMAND_PREFIX } from '@/constants';
 import { getUser, isModeratorOrBroadcaster, sendChatMessage } from '@/helpers';
 import { storage } from '@/storage';
@@ -64,7 +65,7 @@ export function initVisits(config: Config): void {
     run() {
       const count = Object.keys(storage.data.guests).length || 1;
       queueVisit(count);
-      Tixyel.logger.success('[Guestbook] Test visits animation triggered');
+      logger.success('[Guestbook] Test visits animation triggered');
     },
   });
 }

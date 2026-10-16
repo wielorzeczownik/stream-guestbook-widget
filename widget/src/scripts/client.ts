@@ -8,3 +8,5 @@ const client = new Tixyel.Client({
 });
 
 export default client;
+
+export const logger = new Tixyel.modules.useLogger();

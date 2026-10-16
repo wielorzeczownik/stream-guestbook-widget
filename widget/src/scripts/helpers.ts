@@ -1,6 +1,4 @@
-import Tixyel from '@tixyel/streamelements';
-
-import client from '@/client';
+import client, { logger } from '@/client';
 import type { CommandEvent } from '@/types';
 
 const SE_BOT_API = 'https://api.streamelements.com/kappa/v2/bot';
@@ -47,7 +45,7 @@ export function getUser(event: CommandEvent): {
 
 export async function sendChatMessage(message: string): Promise<void> {
   if (import.meta.env.DEV || state.jwtToken === '') {
-    Tixyel.logger.info(message);
+    logger.info(message);
     return;
   }
 
