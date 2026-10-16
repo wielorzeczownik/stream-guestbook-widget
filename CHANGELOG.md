@@ -5,6 +5,21 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.39](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.38...v0.3.39) - 2026-10-16
+
+### Styling
+
+- Collapse logger calls onto single lines ([b03de51](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/b03de5174306a58ba2eace76399a464cd5aaa7ec))
+
+### Build System
+
+- Update dependency eslint-plugin-unicorn to v78 (#286) ([f49cb1c](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/f49cb1c9b5b56305a925e15a4fe7127a74a465a8))
+- Update dependency typescript-eslint to v8.71.2 (#285) ([673c1f7](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/673c1f746a82576dc4500266412584f4a65c25c5))
+
+### Dependencies
+
+- Update dependency motion to v14.2.0 (#287) ([1108db5](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/1108db5c445f1986885967b1555ba757148646ce))
+
 ## [0.3.38](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.37...v0.3.38) - 2026-10-16
 
 ### Bug Fixes
