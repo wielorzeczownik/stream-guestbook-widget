@@ -5,6 +5,12 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.38](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.37...v0.3.38) - 2026-10-16
+
+### Bug Fixes
+
+- Replace removed Tixyel.logger with a shared useLogger instance ([8464fd3](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/8464fd3d0ff521c7dfb40c4a069e644b1cc57545))
+
 ## [0.3.37](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.36...v0.3.37) - 2026-10-15
 
 ### Build System
