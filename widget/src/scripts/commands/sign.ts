@@ -15,9 +15,7 @@ export function initSign(config: Config): void {
     via: 'command' | 'reward' = 'command'
   ): void {
     if (signedThisStream.has(userId)) {
-      logger.debug(
-        `[Guestbook] ${displayName} already signed this stream`
-      );
+      logger.debug(`[Guestbook] ${displayName} already signed this stream`);
       return;
     }
 
@@ -62,9 +60,7 @@ export function initSign(config: Config): void {
       void sendChatMessage(message);
     }
 
-    logger.success(
-      `[Guestbook] ${displayName} signed (visit #${newCount})`
-    );
+    logger.success(`[Guestbook] ${displayName} signed (visit #${newCount})`);
   }
 
   function onCommand(event: CommandEvent): void {

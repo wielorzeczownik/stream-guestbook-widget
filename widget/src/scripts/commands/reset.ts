@@ -39,9 +39,7 @@ export function initReset(config: Config): void {
       const [userId] = entry;
       resetUser(userId);
 
-      logger.success(
-        `[Guestbook] Reset entry for ${target} (mod action)`
-      );
+      logger.success(`[Guestbook] Reset entry for ${target} (mod action)`);
 
       if (config.resetMessageOther) {
         const message = config.resetMessageOther.replace(
