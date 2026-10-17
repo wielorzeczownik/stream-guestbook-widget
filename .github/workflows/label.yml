@@ -58,7 +58,7 @@ jobs:
           xl_label: 'size:XL'
           files_to_ignore: '*package-lock.json *.lock assets/*'
           message_if_xl: >-
-            This pull request changes more than 500 lines, not counting lockfiles.
+            This pull request changes more than 500 lines, not counting lockfiles, assets or generated files.
             Please check that it is not addressing several unrelated things at
             once, because a review this large is a review that misses things.
             It may be asked to be split before it is merged.
