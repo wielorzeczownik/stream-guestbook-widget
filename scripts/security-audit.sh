@@ -3,20 +3,16 @@ set -uo pipefail
 
 : "${GITHUB_OUTPUT:?GITHUB_OUTPUT is required}"
 
-report="${REPORT_FILE:-audit-report.txt}"
-
 emit() {
   echo "$1=$2" >>"$GITHUB_OUTPUT"
 }
 
 emit_report() {
+  local markdown
+  markdown=$(bash "$(dirname "$0")/npm-audit-report.sh")
   {
     echo 'report<<AUDIT_REPORT_EOF'
-    if [[ -s "$report" ]]; then
-      cat "$report"
-    else
-      echo 'npm audit produced no output, see the workflow logs.'
-    fi
+    echo "${markdown:-npm audit produced no output, see the workflow logs.}"
     echo 'AUDIT_REPORT_EOF'
   } >>"$GITHUB_OUTPUT"
 }
@@ -24,7 +20,7 @@ emit_report() {
 production=false
 npm audit --omit=dev >/dev/null 2>&1 || production=true
 
-if npm audit 2>&1 | tee "$report"; then
+if npm audit; then
   emit changed false
   emit unresolved false
   emit production false
@@ -41,7 +37,7 @@ if ! git diff --quiet -- package-lock.json; then
 fi
 
 unresolved=true
-if npm audit 2>&1 | tee "$report"; then
+if npm audit; then
   unresolved=false
 fi
 
