@@ -10,21 +10,21 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  changes:
-    name: Detect changes
+  checks:
+    name: Checks
     runs-on: ubuntu-24.04
-    timeout-minutes: 5
+    timeout-minutes: 15
     permissions:
       contents: read
       pull-requests: read
     outputs:
       code: ${{ steps.filter.outputs.code }}
-      deps: ${{ steps.filter.outputs.deps }}
-      shell: ${{ steps.filter.outputs.shell }}
-      markdown: ${{ steps.filter.outputs.markdown }}
-      format: ${{ steps.filter.outputs.format }}
-      workflows: ${{ steps.filter.outputs.workflows }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
       - name: Filter changed paths
         id: filter
         uses: dorny/paths-filter@ceb8a2b8f2d89434be7ff52d3de7ec3738c5cc9d # v4.0.3
@@ -66,10 +66,62 @@ jobs:
               - '**/*.html'
               - '**/*.scss'
 
+      - name: Install Node.js
+        if: ${{ steps.filter.outputs.deps == 'true' || steps.filter.outputs.format == 'true' }}
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: package.json
+          cache: npm
+
+      - name: Install dependencies
+        id: install
+        if: ${{ steps.filter.outputs.deps == 'true' || steps.filter.outputs.format == 'true' }}
+        run: npm ci
+
+      - name: Format check
+        if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.filter.outputs.format == 'true' }}
+        run: npm run format:check
+
+      - name: Audit
+        if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.filter.outputs.deps == 'true' }}
+        shell: bash
+        run: bash scripts/npm-audit-report.sh >>"$GITHUB_STEP_SUMMARY" || echo "::warning title=npm audit::Advisories found or audit failed, see the job summary. Not blocking this pull request."
+
+      - name: Install shfmt and shellcheck
+        if: ${{ !cancelled() && steps.filter.outputs.shell == 'true' }}
+        uses: taiki-e/install-action@ab6895351a88b908e96a4697860d4ffea5e57dbe # v2.87.27
+        with:
+          tool: shfmt,shellcheck
+
+      - name: Format check shell scripts
+        if: ${{ !cancelled() && steps.filter.outputs.shell == 'true' }}
+        run: shfmt --diff scripts/
+
+      - name: Lint shell scripts
+        if: ${{ !cancelled() && steps.filter.outputs.shell == 'true' }}
+        run: shellcheck scripts/*.sh
+
+      - name: Lint workflows
+        if: ${{ !cancelled() && steps.filter.outputs.workflows == 'true' }}
+        uses: raven-actions/actionlint@3d39aea434753780c3b3d4a1a31c854b4dbf49d7 # v2.2.0
+        with:
+          # renovate: datasource=github-releases depName=rhysd/actionlint
+          version: 1.7.12
+          shellcheck: true
+
+      - name: Lint Markdown
+        if: ${{ !cancelled() && steps.filter.outputs.markdown == 'true' }}
+        uses: DavidAnson/markdownlint-cli2-action@21c1be1b93ad9ed58fa840aacc3f279cde2a72ff # v24.2.0
+        with:
+          globs: |
+            **/*.md
+            !node_modules/**
+            !CHANGELOG.md
+
   code:
-    name: Code (lint, typecheck, test, build)
-    needs: changes
-    if: ${{ needs.changes.outputs.code == 'true' }}
+    name: Code
+    needs: checks
+    if: ${{ !cancelled() && needs.checks.outputs.code == 'true' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
@@ -101,117 +153,3 @@ jobs:
 
       - name: Build
         run: npm run build
-
-  audit:
-    name: Audit dependencies
-    needs: changes
-    if: ${{ needs.changes.outputs.deps == 'true' }}
-    runs-on: ubuntu-24.04
-    timeout-minutes: 10
-    steps:
-      - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-
-      - name: Install Node.js
-        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
-        with:
-          node-version-file: package.json
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Audit
-        shell: bash
-        run: |
-          set -uo pipefail
-          if npm audit 2>&1 | tee audit.log; then
-            exit 0
-          fi
-          echo "::warning title=npm audit::Advisories found - see the job summary. Not blocking this pull request."
-          {
-            echo "### npm audit findings"
-            echo
-            echo '```text'
-            cat audit.log
-            echo '```'
-          } >>"$GITHUB_STEP_SUMMARY"
-
-  format:
-    name: Formatting (Prettier)
-    needs: changes
-    if: ${{ needs.changes.outputs.format == 'true' }}
-    runs-on: ubuntu-24.04
-    timeout-minutes: 10
-    steps:
-      - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-
-      - name: Format check
-        run: npx --yes prettier@3.9.10 --check .
-
-  shell:
-    name: Shell (shfmt + shellcheck)
-    needs: changes
-    if: ${{ needs.changes.outputs.shell == 'true' }}
-    runs-on: ubuntu-24.04
-    timeout-minutes: 10
-    steps:
-      - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-
-      - name: Install shfmt and shellcheck
-        uses: taiki-e/install-action@ab6895351a88b908e96a4697860d4ffea5e57dbe # v2.87.27
-        with:
-          tool: shfmt,shellcheck
-
-      - name: Format check shell scripts
-        run: shfmt --diff scripts/
-
-      - name: Lint shell scripts
-        run: shellcheck scripts/*.sh
-
-  actionlint:
-    name: Lint workflows (actionlint)
-    needs: changes
-    if: ${{ needs.changes.outputs.workflows == 'true' }}
-    runs-on: ubuntu-24.04
-    timeout-minutes: 10
-    steps:
-      - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-
-      - name: Lint workflows
-        uses: raven-actions/actionlint@3d39aea434753780c3b3d4a1a31c854b4dbf49d7 # v2.2.0
-        with:
-          # renovate: datasource=github-releases depName=rhysd/actionlint
-          version: 1.7.12
-          shellcheck: true
-
-  markdownlint:
-    name: Markdown lint
-    needs: changes
-    if: ${{ needs.changes.outputs.markdown == 'true' }}
-    runs-on: ubuntu-24.04
-    timeout-minutes: 10
-    steps:
-      - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-
-      - name: Lint Markdown
-        uses: DavidAnson/markdownlint-cli2-action@21c1be1b93ad9ed58fa840aacc3f279cde2a72ff # v24.2.0
-        with:
-          globs: |
-            **/*.md
-            !node_modules/**
-            !CHANGELOG.md
