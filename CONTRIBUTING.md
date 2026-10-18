@@ -18,8 +18,7 @@ A free StreamElements browser-source widget for Twitch, YouTube, and Kick – vi
 │   └── data.json           StreamElements widget data definitions
 ├── tests/                  vitest suites, mirroring the widget/src/scripts layout
 └── scripts/
-    ├── bump-version.sh     determines and applies the next release version from git-cliff output
-    └── security-audit.sh   runs npm audit, attempts a fix, and reports what is left
+    └── bump-version.sh     determines and applies the next release version from git-cliff output
 ```
 
 ## Development setup
@@ -45,7 +44,6 @@ npm run lint:scss        # stylelint
 npm run typecheck        # tsc --noEmit
 npm test                 # vitest run
 npm run build
-npm audit                # reported, never blocking
 
 # Shell
 shfmt --diff scripts/

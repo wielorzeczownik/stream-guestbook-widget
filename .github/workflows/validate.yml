@@ -42,10 +42,6 @@ jobs:
               - 'vitest.config.ts'
               - 'tixyel.config.ts'
               - '.stylelintrc.json'
-            deps:
-              - '.github/workflows/validate.yml'
-              - 'package.json'
-              - 'package-lock.json'
             shell:
               - '.github/workflows/validate.yml'
               - 'scripts/**'
@@ -67,7 +63,7 @@ jobs:
               - '**/*.scss'
 
       - name: Install Node.js
-        if: ${{ steps.filter.outputs.deps == 'true' || steps.filter.outputs.format == 'true' }}
+        if: ${{ steps.filter.outputs.format == 'true' }}
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version-file: package.json
@@ -75,17 +71,12 @@ jobs:
 
       - name: Install dependencies
         id: install
-        if: ${{ steps.filter.outputs.deps == 'true' || steps.filter.outputs.format == 'true' }}
+        if: ${{ steps.filter.outputs.format == 'true' }}
         run: npm ci
 
       - name: Format check
         if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.filter.outputs.format == 'true' }}
         run: npm run format:check
-
-      - name: Audit
-        if: ${{ !cancelled() && steps.install.outcome == 'success' && steps.filter.outputs.deps == 'true' }}
-        shell: bash
-        run: bash scripts/npm-audit-report.sh >>"$GITHUB_STEP_SUMMARY" || echo "::warning title=npm audit::Advisories found or audit failed, see the job summary. Not blocking this pull request."
 
       - name: Install shfmt and shellcheck
         if: ${{ !cancelled() && steps.filter.outputs.shell == 'true' }}
