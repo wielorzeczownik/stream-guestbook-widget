@@ -173,6 +173,15 @@ jobs:
           cp "widget/export/${VERSION}"/*.zip release/guestbook-widgetio.zip
           zip -j release/guestbook.zip widget/dist/*
 
+      - name: Generate SBOM
+        uses: anchore/sbom-action@66cbf4bc1f1c0d2edc94016e65bc221b6bb0ad6c # v0.24.3
+        with:
+          file: package-lock.json
+          format: spdx-json
+          output-file: release/stream-guestbook-widget.spdx.json
+          upload-artifact: false
+          upload-release-assets: false
+
       - name: Compute SHA-256 checksums
         shell: bash
         working-directory: release
