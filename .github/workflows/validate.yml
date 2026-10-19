@@ -9,6 +9,10 @@ concurrency:
   group: validate-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  # renovate: datasource=github-releases depName=rhysd/actionlint extractVersion=^v(?<version>.+)$
+  ACTIONLINT_VERSION: 1.7.12
+
 jobs:
   checks:
     name: Checks
@@ -96,8 +100,7 @@ jobs:
         if: ${{ !cancelled() && steps.filter.outputs.workflows == 'true' }}
         uses: raven-actions/actionlint@3d39aea434753780c3b3d4a1a31c854b4dbf49d7 # v2.2.0
         with:
-          # renovate: datasource=github-releases depName=rhysd/actionlint
-          version: 1.7.12
+          version: ${{ env.ACTIONLINT_VERSION }}
           shellcheck: true
 
       - name: Lint Markdown
