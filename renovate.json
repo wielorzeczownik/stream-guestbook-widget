@@ -4,7 +4,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["^widget/src/index\\.html$"],
+      "managerFilePatterns": ["/^widget/src/index\\.html$/"],
       "matchStrings": [
         "cdn\\.jsdelivr\\.net/npm/@tixyel/streamelements@(?<currentValue>[^/]+)"
       ],
