@@ -54,7 +54,6 @@ split_commits = false
 commit_parsers = [
   { breaking = true, group = "Breaking Changes" },
   { message = "^chore\\(release\\)", skip = true },
-  { message = "^chore\\(deps\\)", group = "Dependencies" },
   { message = "^chore", skip = true },
   { message = "^ci", skip = true },
   { message = "^refactor", group = "Refactoring" },
@@ -63,6 +62,7 @@ commit_parsers = [
   { message = "^style", skip = true },
   { message = "^build", skip = true },
   { message = "^feat", group = "Features" },
+  { message = "^fix\\(deps\\)", group = "Dependencies" },
   { message = "^fix", group = "Bug Fixes" },
   { message = "^perf", group = "Performance" },
 ]
