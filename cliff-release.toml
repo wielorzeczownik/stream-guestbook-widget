@@ -52,7 +52,7 @@ conventional_commits = true
 filter_unconventional = true
 split_commits = false
 commit_parsers = [
-  { breaking = true, group = "Breaking Changes" },
+  { field = "breaking", pattern = "true", group = "Breaking Changes" },
   { message = "^chore\\(release\\)", skip = true },
   { message = "^chore", skip = true },
   { message = "^ci", skip = true },
