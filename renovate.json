@@ -14,16 +14,8 @@
   ],
   "packageRules": [
     {
-      "matchDepTypes": ["devDependencies"],
-      "semanticCommitType": "build"
-    },
-    {
       "matchPackageNames": ["@tixyel/streamelements"],
       "groupName": "streamelements"
-    },
-    {
-      "matchPackageNames": ["typescript"],
-      "allowedVersions": "<6.1.0"
     }
   ]
 }
