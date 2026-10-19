@@ -31,8 +31,8 @@
     "fix": "eslint --fix widget/src/scripts widget/src/index.html tests && stylelint --fix \"widget/src/styles/**/*.scss\" && prettier --write ."
   },
   "devDependencies": {
-    "@html-eslint/eslint-plugin": "0.66.1",
-    "@html-eslint/parser": "0.66.1",
+    "@html-eslint/eslint-plugin": "0.67.0",
+    "@html-eslint/parser": "0.67.0",
     "@tixyel/cli": "3.7.0",
     "@types/node": "26.6.5",
     "eslint": "10.12.0",
@@ -43,7 +43,7 @@
     "jiti": "2.7.0",
     "prettier": "3.9.10",
     "rollup-plugin-external-globals": "0.13.0",
-    "sass": "1.105.1",
+    "sass": "1.105.2",
     "stylelint": "17.16.0",
     "stylelint-config-recess-order": "7.8.0",
     "stylelint-config-standard-scss": "17.0.0",
@@ -52,10 +52,10 @@
     "typescript-eslint": "8.71.2",
     "vite": "8.3.4",
     "vite-plugin-static-copy": "4.1.1",
-    "vitest": "5.0.4"
+    "vitest": "5.0.5"
   },
   "dependencies": {
     "@tixyel/streamelements": "7.15.0",
-    "motion": "14.2.0"
+    "motion": "14.3.0"
   }
 }
