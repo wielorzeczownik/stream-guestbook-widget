@@ -5,6 +5,41 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.40](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.39...v0.3.40) - 2026-10-21
+
+### Bug Fixes
+
+- Match breaking changes by field so they get their own section ([4eb31cd](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/4eb31cdacc443f0352e5f3c7a89eede53ec5e9ec))
+- Group fix(deps) updates under dependencies ([8161a08](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/8161a08a7dcb9f2a0700fa625d7bedcd53340485))
+
+### Documentation
+
+- Explain how to verify attestations in release notes ([f37a8a2](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/f37a8a24f2a1023c0cddc09ffcf3f3942255a3da))
+- Use shared pull request template from .github ([bfb3cbf](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/bfb3cbfa003b1b097282cfc1a22f6d56e0e61fb8))
+- Use shared code of conduct from .github ([e3a8e84](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/e3a8e846a246c71c73436cc0e08be81e8d4d02d1))
+
+### Build System
+
+- Migrate fileMatch to managerFilePatterns ([4dca6f8](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/4dca6f899318e6966cc5f307a38d7615d53226d3))
+- Drop rules covered by shared preset ([54452e6](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/54452e64a51c2f1bab27018afa7719763968867a))
+- Extend shared preset from .github ([b685210](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/b68521011f0a24fbf9ea53459e6f6d9dce953328))
+- Open one pull request per dependency (#294) ([c75c619](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/c75c6190d7fa2aef40f393970e79fd10a9c58808))
+- Update all non-major (#292) ([9a300a7](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/9a300a7d671464a42a40749d4cf5d7eb9759e94a))
+
+### CI/CD
+
+- Attach an spdx sbom to releases ([3730d5b](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/3730d5bfb71cb404e42f2029f26acc950fec0c2d))
+- Move pinned tool versions to workflow env ([91a0ab4](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/91a0ab41e4f6ae116e0033a2fc4f3f1ddf25d7d6))
+- Hand dependency fixes to renovate (#291) ([235f1b4](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/235f1b44d775d2c103bf45ebed34d6433eb56aa2))
+- Skip npm ci in prepare and unify job names (#290) ([b65f1e7](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/b65f1e764dc7aef6123c84d3a5ba13e08e51cc58))
+- Adopt repo standard for validate, labels and audit reports ([c7601a0](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/c7601a046e2e12f2dd7441c6c34f01ca347face0))
+- Batch updates weekly and skip bot PRs in label/assign ([18a0435](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/18a0435c46cad4263308d6a30ee7edea6e0be632))
+- Update taiki-e/install-action action to v2.87.27 (#288) ([5633726](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/56337261602b8196825f02a955afb4fb3e1c3637))
+
+### Dependencies
+
+- Lock file maintenance (#293) ([be99635](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/be99635f13cde246230af4a3e72af703aec8e459))
+
 ## [0.3.39](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.38...v0.3.39) - 2026-10-16
 
 ### Styling
@@ -728,10 +763,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.2.8](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.2.7...v0.2.8) - 2026-04-15
 
-### Bug Fixes
-
-- Update @tixyel/streamelements to resolve issues ([e5d7f24](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/e5d7f24e7c6e84d28d80c80fe0316abce535def4))
-
 ### Testing
 
 - Added missing jwtToken ([ef52567](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/ef52567b0a052eee6d8e59f4a196090f36b1d911))
@@ -744,6 +775,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### CI/CD
 
 - Add typecheck to validate workflow ([32662b5](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/32662b5a28f12534eeb82d0df3f9ee82a2861e79))
+
+### Dependencies
+
+- Update @tixyel/streamelements to resolve issues ([e5d7f24](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/e5d7f24e7c6e84d28d80c80fe0316abce535def4))
 
 ## [0.2.7](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.2.6...v0.2.7) - 2026-04-13
 
@@ -809,10 +844,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.2.3](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.2.2...v0.2.3) - 2026-04-04
 
-### Bug Fixes
-
-- Resolve JS audit advisories [skip ci] ([625fe64](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/625fe64df7cf0253cec0927bf8bc83ccb9261998))
-
 ### Build System
 
 - Update dependency vite-plugin-static-copy to v4.0.1 ([9fde70b](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/9fde70b98b610b222b908694229c62f67f68549f))
@@ -825,6 +856,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Dependencies
 
+- Resolve JS audit advisories [skip ci] ([625fe64](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/625fe64df7cf0253cec0927bf8bc83ccb9261998))
 - Update dependency eslint to v10.2.0 [skip release] (#12) ([c78b2f0](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/c78b2f07e3468cf2226ef6bb207b4e133af3bcda))
 - Update dependency @types/node to v25.5.2 [skip release] (#11) ([39e663b](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/39e663be62e0dc033c1455706561ab0ca745d1cf))
 - Update dependency sass to v1.99.0 [skip release] (#10) ([125af71](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/125af71629ec401dd461467e8e30080c7767e2bb))
