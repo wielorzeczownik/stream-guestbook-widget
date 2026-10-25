@@ -47,6 +47,12 @@ if [[ "$(printf '%s\n' "$current_version" "$next_version" | sort -V | tail -1)" 
   exit 0
 fi
 
+if [[ "${RELEASE_KIND:-stable}" == "rc" ]]; then
+  rc=$(($(git tag -l "${next_tag}-rc.*" | wc -l) + 1))
+  emit_outputs true "${next_version}-rc.${rc}" "${next_tag}-rc.${rc}" false
+  exit 0
+fi
+
 npm version "$next_version" --no-git-tag-version
 
 node -e "
