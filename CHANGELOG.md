@@ -5,6 +5,21 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.41](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.40...v0.3.41) - 2026-10-26
+
+### Bug Fixes
+
+- Draft releases before uploading assets (#297) ([c8fcc3a](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/c8fcc3a1a7a41b9db637b239dc2f62ea3dd2e67e))
+
+### CI/CD
+
+- Cut release candidates on push and stable releases weekly (#296) ([64d63f2](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/64d63f286da540723dd38c15b3b58e186f66bdd1))
+
+### Dependencies
+
+- Update dependency vite to v8.3.5 (#299) ([8c2fb3d](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/8c2fb3d1715d3fdb86234a824130b71f599301d2))
+- Update dependency stylelint-config-recess-order to v7.8.2 (#298) ([532bc03](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/532bc03f318b5f6c0e45056c8512691d11becf24))
+
 ## [0.3.40](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.39...v0.3.40) - 2026-10-21
 
 ### Bug Fixes
