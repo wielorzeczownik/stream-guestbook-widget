@@ -43,7 +43,7 @@
     "jiti": "2.7.0",
     "prettier": "3.9.10",
     "rollup-plugin-external-globals": "0.13.0",
-    "sass": "1.105.2",
+    "sass": "1.106.1",
     "stylelint": "17.16.0",
     "stylelint-config-recess-order": "7.8.2",
     "stylelint-config-standard-scss": "17.0.0",
