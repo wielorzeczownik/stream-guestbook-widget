@@ -21,7 +21,7 @@ concurrency:
 jobs:
   prepare-release:
     name: Prepare release
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 15
     permissions:
       contents: write
@@ -156,7 +156,7 @@ jobs:
     name: Widget
     needs: prepare-release
     if: ${{ needs.prepare-release.outputs.released == 'true' }}
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 15
     permissions:
       contents: read
@@ -227,7 +227,7 @@ jobs:
       - prepare-release
       - build-artifacts
     if: ${{ needs.prepare-release.outputs.released == 'true' }}
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 10
     permissions:
       contents: write
