@@ -183,12 +183,11 @@ jobs:
 
       - name: Prepare release artifacts
         shell: bash
-        env:
-          VERSION: ${{ needs.prepare-release.outputs.version }}
         run: |
           set -euo pipefail
           mkdir -p release
-          cp "widget/export/${VERSION}"/*.zip release/guestbook-widgetio.zip
+          export_dir="widget/export/$(node -p "JSON.parse(require('fs').readFileSync('widget/.tixyel', 'utf8')).version")"
+          cp "${export_dir}"/*.zip release/guestbook-widgetio.zip
           zip -j release/guestbook.zip widget/dist/*
 
       - name: Generate SBOM
