@@ -15,7 +15,7 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": "24.x"
+    "node": "26.x"
   },
   "scripts": {
     "dev": "vite --mode development",
@@ -34,7 +34,7 @@
     "@html-eslint/eslint-plugin": "0.67.0",
     "@html-eslint/parser": "0.67.0",
     "@tixyel/cli": "3.7.0",
-    "@types/node": "26.6.5",
+    "@types/node": "26.6.6",
     "eslint": "10.13.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-simple-import-sort": "14.0.0",
