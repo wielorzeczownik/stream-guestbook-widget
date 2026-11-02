@@ -5,6 +5,30 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.42](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.41...v0.3.42) - 2026-11-02
+
+### CI/CD
+
+- Update pozil/auto-assign-issue action to v4.1.0 (#312) ([ddd0635](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/ddd0635f00e1dc1cbff3b652d38399e725d8f93f))
+- Read export dir version from widget/.tixyel (#316) ([e35fbe0](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/e35fbe029cdbf86d6724f3947ff4ae8e1244cfbc))
+- Update davidanson/markdownlint-cli2-action action to v25 (#315) ([a26ab66](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/a26ab664c497685e2084ceeb73082a2c662d31d4))
+- Update taiki-e/install-action action to v2.87.31 (#310) ([c352961](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/c352961fb44d70acfe9a05057e590835c6b1ebaf))
+- Update taiki-e/install-action action to v2.87.29 (#300) ([a9d84ea](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/a9d84ea3c1a836d02792d148b905bf7870e19a6a))
+
+### Dependencies
+
+- Lock file maintenance (#308) ([0ab6974](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/0ab6974ffeb1572b7a473eb68d705fdcc71c2d88))
+- Update dependency motion to v14.8.0 (#313) ([71586d3](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/71586d3dd16b8da48d31960989218ee23c25c67a))
+- Update dependency sass to v1.107.0 (#311) ([8da4b22](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/8da4b229a45eecea726b4beebeebdb5ff77cfc66))
+- Update node.js to v26 (#314) ([67defeb](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/67defeb44d8fbadc6099d7f26d8b3b00cb9ea15b))
+- Update dependency typescript-eslint to v8.72.1 (#309) ([e3c1724](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/e3c17241deac1139f0ee38b32fd379f3b19c3a18))
+- Update dependency eslint-plugin-unicorn to v79 (#306) ([4093cba](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/4093cba17697793df1a4cd0b6f99533eb7232b95))
+- Update dependency motion to v14.6.0 (#305) ([4255c39](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/4255c396dda05499c25a6973877d527b9070711d))
+- Update dependency typescript-eslint to v8.72.0 (#304) ([baf1e2a](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/baf1e2a9b0f06d1fd0a905ebacf172ca3198eb74))
+- Update dependency stylelint-config-recess-order to v7.9.0 (#303) ([3017f86](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/3017f86142bbd764c3c1a5a41da3eb2c59b8add1))
+- Update dependency sass to v1.106.1 (#302) ([b38a847](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/b38a847d5b5f2168b1f02687841e2d897fc236c8))
+- Update dependency eslint to v10.13.0 (#301) ([eb859be](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/eb859bed6b0c74cbe9bbe66e85bc44c4c7ad9ff6))
+
 ## [0.3.41](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.40...v0.3.41) - 2026-10-26
 
 ### Bug Fixes
