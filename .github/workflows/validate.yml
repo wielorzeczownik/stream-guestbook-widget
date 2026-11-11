@@ -16,7 +16,7 @@ env:
 jobs:
   checks:
     name: Checks
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 15
     permissions:
       contents: read
@@ -116,7 +116,7 @@ jobs:
     name: Code
     needs: checks
     if: ${{ !cancelled() && needs.checks.outputs.code == 'true' }}
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 15
     steps:
       - name: Checkout
