@@ -56,6 +56,6 @@
   },
   "dependencies": {
     "@tixyel/streamelements": "7.15.0",
-    "motion": "14.8.0"
+    "motion": "14.10.1"
   }
 }
