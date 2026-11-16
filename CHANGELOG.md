@@ -5,6 +5,24 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.43](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.42...v0.3.43) - 2026-11-16
+
+### CI/CD
+
+- Update taiki-e/install-action action to v2.89.1 (#323) ([d6efd5e](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/d6efd5e2aa30f3d17dacd64226d52167fcfd8e5b))
+- Create lightweight tags ([0281835](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/0281835c21a015bf624aef2fe9a53208171b1dc2))
+
+### Dependencies
+
+- Update dependency sass to v1.108.2 (#326) ([ed3682c](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/ed3682c28a804b48145250f0ac0028edbe5960be))
+- Update dependency motion to v14.10.1 (#324) ([fd29c1a](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/fd29c1a1ba3228809ac95a441284320b9a4b2dee))
+- Update dependency stylelint-config-recess-order to v7.10.0 (#321) ([298f410](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/298f410139b49ea9dda58b029fbdbbec091b702c))
+- Update dependency sass to v1.108.1 (#317) ([5ec0142](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/5ec01427c7baa5a6b66c812afece95bba0c39a81))
+- Update dependency vitest to v5.1.0 (#322) ([aba4c9f](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/aba4c9f30f759fec44b95b4f66292a4e1021ba48))
+- Update dependency eslint to v10.14.0 (#320) ([6510d18](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/6510d182d1837827b98859509c049eb6eda25367))
+- Update dependency vite to v8.3.6 (#319) ([a31b519](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/a31b51973669dc12771f0a793525df4a2cbe3d32))
+- Update dependency stylelint-order to v8.1.3 (#318) ([d18e0ee](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/d18e0ee7cc999101c4b56b77058aaeea4c720547))
+
 ## [0.3.42](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.41...v0.3.42) - 2026-11-02
 
 ### CI/CD
