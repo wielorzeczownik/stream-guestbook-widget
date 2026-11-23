@@ -5,6 +5,28 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.44](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.43...v0.3.44) - 2026-11-23
+
+### Documentation
+
+- Make contributing, security and issue forms friendlier (#342) ([5265340](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/5265340d6553e8648e6c65ce05556905264a073a))
+
+### CI/CD
+
+- Update taiki-e/install-action action to v2.90.5 (#336) ([f04ad62](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/f04ad623c6daf52fa6c9ccc1ba93ee7eb5fd92f6))
+- Update taiki-e/install-action action to v2.90.3 (#332) ([5bd8c56](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/5bd8c56a718b5c4c12c2a3000791728f31353a7e))
+- Update softprops/action-gh-release action to v3.0.4 (#329) ([c095f16](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/c095f16583c91257057501a524fb45cc3342d53c))
+
+### Dependencies
+
+- Update dependency vitest to v5.1.1 (#335) ([474e318](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/474e31800d356a277fe8c3334bc520b7a6fd57d0))
+- Update dependency stylelint-config-recess-order to v7.10.1 (#334) ([563431d](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/563431de9515543f15a14af71f4b194c81ead390))
+- Update dependency motion to v14.14.0 (#333) ([3dbf8df](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/3dbf8df3b254eda634d6feccc14efd84f73a6f84))
+- Update html-eslint monorepo to v0.68.0 (#331) ([888b9f9](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/888b9f9fc9a25e68e188adfcfe8612c1bff8f68e))
+- Update dependency prettier to v3.10.1 (#330) ([5414bf0](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/5414bf059f277a73a71610ac22ca49e46ff8b15a))
+- Update dependency vite to v8.3.8 (#328) ([283b2f0](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/283b2f08d3c28402ac06f2302e333f9f9449c429))
+- Update dependency typescript-eslint to v8.72.2 (#327) ([0e68890](https://github.com/wielorzeczownik/stream-guestbook-widget/commit/0e68890f8acd199d9b737c732b04d9bbe6f3ed8f))
+
 ## [0.3.43](https://github.com/wielorzeczownik/stream-guestbook-widget/compare/v0.3.42...v0.3.43) - 2026-11-16
 
 ### CI/CD
