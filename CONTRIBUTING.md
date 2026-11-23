@@ -1,27 +1,8 @@
-# Contributing to stream-guestbook-widget
+# Contributing
 
-Thank you for considering a contribution. This document covers everything you need to get started.
+Every contribution helps, including a typo fix, a bug report, or a question about how something works. For anything bigger than a small fix, opening an issue first is a good idea, so we can agree on the approach before you spend time on it.
 
-## Overview
-
-A free StreamElements browser-source widget for Twitch, YouTube, and Kick – viewers sign a virtual guestbook via chat command or Channel Points. Tracks visit counts and leaderboards.
-
-## Project structure
-
-```text
-.
-├── widget/src/
-│   ├── index.html          widget entry point (HTML + bundled scripts and styles)
-│   ├── scripts/            TypeScript source files
-│   ├── styles/             SCSS source files
-│   ├── fields.json         StreamElements widget field definitions
-│   └── data.json           StreamElements widget data definitions
-├── tests/                  vitest suites, mirroring the widget/src/scripts layout
-└── scripts/
-    └── bump-version.sh     determines and applies the next release version from git-cliff output
-```
-
-## Development setup
+## Setup
 
 ```bash
 git clone https://github.com/wielorzeczownik/stream-guestbook-widget.git
@@ -30,84 +11,36 @@ npm ci
 npm run dev
 ```
 
-## Running checks locally
+## Checks
 
-CI runs exactly these commands. Anything that passes here passes there.
-
-### With tools installed
+CI runs these on every pull request. You don't have to run them all locally, since CI will point out anything that's off:
 
 ```bash
-# TypeScript, SCSS and formatting
-npm run format:check     # prettier --check . (whole repo, honours .prettierignore)
-npm run lint             # eslint, warnings are errors
-npm run lint:scss        # stylelint
-npm run typecheck        # tsc --noEmit
-npm test                 # vitest run
+npm run format:check
+npm run lint
+npm run lint:scss
+npm run typecheck
+npm test
 npm run build
 
-# Shell
 shfmt --diff scripts/
 shellcheck scripts/*.sh
-
-# Workflows
 actionlint
-
-# Markdown
 markdownlint-cli2 "**/*.md" '!node_modules/**' '!CHANGELOG.md'
 ```
 
-`npm run fix` applies every autofixable finding from eslint, stylelint and prettier in one go.
+`npm run fix` fixes whatever eslint, stylelint and prettier can fix on their own.
 
-### With Docker (no local installs required)
+## Tests
 
-```bash
-docker run --rm -v "$(pwd):/src" -w /src mvdan/shfmt --diff scripts/
+Tests are vitest suites in `tests/`, mirroring `widget/src/scripts/`.
 
-docker run --rm -v "$(pwd):/mnt" -w /mnt koalaman/shellcheck:stable scripts/*.sh
+## Commits and pull requests
 
-docker run --rm -v "$(pwd):/repo" -w /repo rhysd/actionlint:1.7.12
+Commits follow [Conventional Commits](https://www.conventionalcommits.org/) (`feat: ...`, `fix: ...`), because the changelog and version bumps are generated from them. Don't worry if you get the prefix wrong, it can be fixed before merging.
 
-docker run --rm -v "$(pwd):/workdir" davidanson/markdownlint-cli2 "**/*.md" '!node_modules/**' '!CHANGELOG.md'
-```
+Smaller PRs that do one thing are easier to review. Tests for behavior changes are very welcome. If you're not sure how to test something, open the PR anyway and we'll work it out together.
 
-## Commit style
+Bugs and ideas go to [issues](https://github.com/wielorzeczownik/stream-guestbook-widget/issues). Security problems go through [SECURITY.md](SECURITY.md).
 
-This project uses [Conventional Commits](https://www.conventionalcommits.org/). Commit messages drive automatic changelog generation and version bumping.
-
-| Prefix      | When to use                                |
-| ----------- | ------------------------------------------ |
-| `feat:`     | New feature or behavior                    |
-| `fix:`      | Bug fix                                    |
-| `perf:`     | Performance improvement                    |
-| `refactor:` | Code change without behavior change        |
-| `test:`     | Tests only                                 |
-| `docs:`     | Documentation only                         |
-| `style:`    | Formatting, no logic change                |
-| `build:`    | Build tooling and development dependencies |
-| `ci:`       | Workflows and CI configuration             |
-| `chore:`    | Maintenance that fits nothing above        |
-
-Breaking changes must include `BREAKING CHANGE:` in the commit footer.
-
-Keep commits focused on a single concern. If a change touches both logic and tests, a single commit is fine – if it touches unrelated areas, split it.
-
-## Pull requests
-
-- Keep PRs focused on a single concern.
-- Reference any related issue in the PR description.
-- All CI checks must pass before merging.
-
-## Reporting bugs
-
-Open an [issue](https://github.com/wielorzeczownik/stream-guestbook-widget/issues) and include:
-
-- What you did
-- What you expected
-- What actually happened
-- Your browser and OBS version
-
-> For security issues, read [SECURITY.md](SECURITY.md) before opening a public issue.
-
-## License
-
-By contributing you agree that your changes will be licensed under the [MIT License](LICENSE).
+Contributions are licensed under the [MIT License](LICENSE).
